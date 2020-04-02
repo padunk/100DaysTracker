@@ -28,9 +28,26 @@ const db = new sqlite3.Database(
 
 APP.get("/", (req, res, next) => {
     db.all("SELECT * FROM challenge", (err, rows) => {
-        console.log(rows);
         res.end(JSON.stringify(rows));
     });
+    // db.close();
+});
+
+APP.get("/detail/:challengeID", (req, res, next) => {
+    const id = req.params.challengeID;
+    const query = `
+        SELECT * 
+        FROM challenge_detail 
+        WHERE parent_id='${id}' 
+        ORDER BY day_number ASC
+    `;
+    db.get(query, (err, rows) => {
+        if (err) {
+            console.error(err);
+        }
+        res.end(JSON.stringify([rows]));
+    });
+    // db.close();
 });
 
 APP.listen(port, () => {
