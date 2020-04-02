@@ -5,13 +5,13 @@ interface Props {}
 
 const Navigation = (props: Props) => {
     return (
-        <nav>
+        <nav className='w-screen bg-indigo-400 flex flex-wrap justify-around py-8 text-3xl shadow-outline shadow-xl'>
             <div>
                 <Link to='/skill-list'>Skill List</Link>
             </div>
             <div>
                 <Link to='/'>
-                    <h1>#100Days-Tracker</h1>
+                    <h1 className='font-bold text-center'>#100Days-Tracker</h1>
                 </Link>
             </div>
             <div>

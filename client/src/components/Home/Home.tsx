@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
+import Divider from "../Divider/Divider";
 
 interface Props {}
 
@@ -32,21 +33,38 @@ const Home = (props: Props) => {
         return <div>Loading</div>;
     } else {
         return (
-            <div>
+            <Fragment>
                 <Navigation />
-                <ul>
-                    {challengeList.map(challenge => {
-                        return (
-                            <li key={challenge.challenge_id}>
-                                <Link to={`detail/${challenge.challenge_id}`}>
-                                    <p>{challenge.title}</p>
-                                    <p>{challenge.goal}</p>
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
+                <div>
+                    <Divider space={10} />
+                    <ul className='text-xl max-w-md mx-auto'>
+                        {challengeList.map(challenge => {
+                            return (
+                                <li
+                                    key={challenge.challenge_id}
+                                    className='bg-purple-400 rounded-lg shadow-2xl border border-pink-600'>
+                                    <Link
+                                        className='py-4 px-6 block'
+                                        to={`detail/${challenge.challenge_id}`}>
+                                        <p>
+                                            Title:{" "}
+                                            <span className='font-bold'>
+                                                {challenge.title}
+                                            </span>
+                                        </p>
+                                        <p>
+                                            Personal goal:{" "}
+                                            <span className='font-bold'>
+                                                {challenge.goal}
+                                            </span>
+                                        </p>
+                                    </Link>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            </Fragment>
         );
     }
 };
