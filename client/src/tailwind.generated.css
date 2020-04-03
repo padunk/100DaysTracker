@@ -606,6 +606,24 @@ video {
   }
 }
 
+.hover-nav:hover {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: #2d3748;
+  --transform-translate-x: 0;
+  --transform-translate-y: 0;
+  --transform-rotate: 0;
+  --transform-skew-x: 0;
+  --transform-skew-y: 0;
+  --transform-scale-x: 1;
+  --transform-scale-y: 1;
+  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  --transform-translate-y: -0.25rem;
+  --transform-scale-x: 1.1;
+  --transform-scale-y: 1.1;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -10910,6 +10928,18 @@ video {
 
 .duration-1000 {
   transition-duration: 1000ms;
+}
+
+.pli-center {
+  place-items: center;
+}
+
+.pli-start {
+  place-items: start;
+}
+
+.pli-end {
+  place-items: end;
 }
 
 @media (min-width: 640px) {
