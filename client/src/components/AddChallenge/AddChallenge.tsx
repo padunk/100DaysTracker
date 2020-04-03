@@ -3,6 +3,7 @@ import Divider from "../Divider/Divider";
 import Wrapper from "../Wrapper/Wrapper";
 import InputLabel from "../InputLabel/InputLabel";
 import InputText from "../InputText/InputText";
+import { BASE_URL } from "../../base/baseURL";
 
 interface Props {}
 
@@ -16,7 +17,7 @@ const AddChallenge = (props: Props) => {
     const handleSubmit = async (event: any) => {
         event.preventDefault();
         try {
-            await fetch("http://192.168.168.17:5000/add", {
+            await fetch(`${BASE_URL}/add`, {
                 method: "POST",
                 mode: "cors",
                 credentials: "same-origin",
