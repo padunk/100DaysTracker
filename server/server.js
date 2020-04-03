@@ -38,19 +38,38 @@ APP.get("/detail/:challengeID", (req, res, next) => {
         SELECT * 
         FROM challenge_detail 
         WHERE parent_id='${id}' 
-        ORDER BY day_number ASC
+        ORDER BY rowid ASC
     `;
-    db.get(query, (err, rows) => {
+
+    db.all(query, (err, rows) => {
         if (err) {
             console.error(err);
         }
-        res.end(JSON.stringify([rows]));
+        if (rows.length === 0) {
+            res.end(JSON.stringify([null]));
+        }
+        res.end(JSON.stringify(rows));
     });
     // db.close();
 });
 
+APP.post("/detail/:challengeID", (req, res, next) => {
+    const { progress: tweet } = req.body;
+    const { challengeID: parent_id } = req.params;
+    const data = [parent_id, tweet, +new Date()];
+
+    const insert = `INSERT INTO challenge_detail VALUES(?, ?, ?)`;
+    db.run(insert, data, function(err) {
+        if (err) {
+            console.error(err.message);
+            return;
+        }
+        console.log("Save to database: SUCCESS");
+        res.end();
+    });
+});
+
 APP.post("/add", (req, res, next) => {
-    console.log(req.body);
     const id = uuidv4();
     const { title, hashtag, goal } = req.body;
     const date = +new Date();
