@@ -6,7 +6,6 @@ interface Props {
 }
 
 function Layout(props: Props) {
-    console.log('layout', props);
     return (
         <Fragment>
             <Navigation />
