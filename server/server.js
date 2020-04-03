@@ -2,7 +2,7 @@ require("dotenv").config;
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const methodOverride = require("method-override");
+const uuidv4 = require("uuid").v4;
 const sqlite3 = require("sqlite3").verbose();
 
 const APP = express();
@@ -12,7 +12,6 @@ const port = process.env.PORT || 5000;
 APP.use(express.json());
 APP.use(bodyParser.urlencoded({ extended: false }));
 APP.use(cors());
-APP.use(methodOverride("method"));
 
 const db = new sqlite3.Database(
     "./database/challenges.db",
@@ -48,6 +47,24 @@ APP.get("/detail/:challengeID", (req, res, next) => {
         res.end(JSON.stringify([rows]));
     });
     // db.close();
+});
+
+APP.post("/add", (req, res, next) => {
+    console.log(req.body);
+    const id = uuidv4();
+    const { title, hashtag, goal } = req.body;
+    const date = +new Date();
+    const data = [id, title, hashtag, goal, date];
+
+    const insert = `INSERT INTO challenge VALUES(?, ?, ?, ?, ?)`;
+    db.run(insert, data, err => {
+        if (err) {
+            console.error(err.message);
+            return;
+        }
+        console.log("Save to database: SUCCESS");
+        res.end();
+    });
 });
 
 APP.listen(port, () => {
