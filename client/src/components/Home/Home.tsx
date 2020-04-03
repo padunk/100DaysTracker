@@ -1,6 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
-import Navigation from "../Navigation/Navigation";
 import Divider from "../Divider/Divider";
 
 interface Props {}
@@ -34,36 +33,33 @@ const Home = (props: Props) => {
     } else {
         return (
             <Fragment>
-                <Navigation />
-                <div>
-                    <Divider space={10} />
-                    <ul className='text-xl max-w-md mx-auto'>
-                        {challengeList.map(challenge => {
-                            return (
-                                <li
-                                    key={challenge.challenge_id}
-                                    className='bg-purple-400 rounded-lg shadow-2xl border border-pink-600'>
-                                    <Link
-                                        className='py-4 px-6 block'
-                                        to={`detail/${challenge.challenge_id}`}>
-                                        <p>
-                                            Title:{" "}
-                                            <span className='font-bold'>
-                                                {challenge.title}
-                                            </span>
-                                        </p>
-                                        <p>
-                                            Personal goal:{" "}
-                                            <span className='font-bold'>
-                                                {challenge.goal}
-                                            </span>
-                                        </p>
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
+                <Divider space={10} />
+                <ul className='text-xl max-w-md mx-auto'>
+                    {challengeList.map(challenge => {
+                        return (
+                            <li
+                                key={challenge.challenge_id}
+                                className='bg-purple-400 rounded-lg shadow-2xl border border-pink-600'>
+                                <Link
+                                    className='py-4 px-6 block'
+                                    to={`detail/${challenge.challenge_id}`}>
+                                    <p>
+                                        Title:{" "}
+                                        <span className='font-bold'>
+                                            {challenge.title}
+                                        </span>
+                                    </p>
+                                    <p>
+                                        Personal goal:{" "}
+                                        <span className='font-bold'>
+                                            {challenge.goal}
+                                        </span>
+                                    </p>
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
             </Fragment>
         );
     }
