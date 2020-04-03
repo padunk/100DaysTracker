@@ -14,7 +14,7 @@ const Navigation = (props: Props) => {
                     <h1 className='font-bold text-center '>#100Days-Tracker</h1>
                 </Link>
             </div>
-            <div className='hover-nav'>
+            <div className='hover-nav-svg w-8 h-8'>
                 <Link to='/add'>
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
