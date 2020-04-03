@@ -5,6 +5,12 @@
 .hover-nav:hover {
   @apply transition duration-300 ease-in-out text-gray-800 transform -translate-y-1 scale-110;
 }
+.hover-nav-svg:hover {
+  @apply transition duration-300 ease-in-out text-gray-800 transform rotate-90;
+}
+.first-line-bold::first-line {
+  font-weight: bold;
+}
 
 @tailwind utilities;
 
