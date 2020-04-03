@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import Divider from "../Divider/Divider";
+import { BASE_URL } from "../../base/baseURL";
 
 interface Props {}
 
@@ -25,7 +26,7 @@ const Home = (props: Props) => {
             }
         }
 
-        getAllChallenges("http://192.168.168.17:5000");
+        getAllChallenges(BASE_URL);
     }, []);
 
     if (challengeList.length === 0) {
@@ -39,21 +40,26 @@ const Home = (props: Props) => {
                         return (
                             <li
                                 key={challenge.challenge_id}
-                                className='bg-purple-400 rounded-lg shadow-2xl border border-pink-600'>
+                                className='bg-purple-400 rounded-lg shadow-lg border border-pink-600 mb-4'>
                                 <Link
                                     className='py-4 px-6 block'
-                                    to={`detail/${challenge.challenge_id}`}>
+                                    to={{
+                                        pathname: `detail/${challenge.challenge_id}`,
+                                        state: {
+                                            hashtag: challenge.hash_tag,
+                                        },
+                                    }}>
                                     <p>
                                         Title:{" "}
-                                        <span className='font-bold'>
+                                        <strong className='font-bold'>
                                             {challenge.title}
-                                        </span>
+                                        </strong>
                                     </p>
                                     <p>
                                         Personal goal:{" "}
-                                        <span className='font-bold'>
+                                        <strong className='font-bold'>
                                             {challenge.goal}
-                                        </span>
+                                        </strong>
                                     </p>
                                 </Link>
                             </li>
