@@ -23,7 +23,9 @@ interface IDetail {
 }
 
 const DetailChallenge = (props: Props) => {
-    const { hashtag } = props.location.state;
+    const hashtag = props.location.state
+        ? props.location.state.hashtag
+        : "#100DaysOf";
     const id = props.match.params.challengeID;
     const [detailList, setDetailList] = useState<Array<IDetail>>([]);
 
