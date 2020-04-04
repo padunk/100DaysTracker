@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Wrapper from "../Wrapper/Wrapper";
 import Divider from "../Divider/Divider";
 import { BASE_URL } from "../../base/baseURL";
+import Button from "../Button/Button";
 
 interface Props {
     id: string;
@@ -11,23 +12,16 @@ interface Props {
 
 const AddDetail = (props: Props) => {
     const [progress, setProgress] = useState<string>(`\n${props.hashtag}`);
-    const [twitterHref, setTwitterHref] = useState<string>("");
+    let initialText = `Today I\'m committing to do`;
+    const [twitterHref, setTwitterHref] = useState<string>(
+        `https://twitter.com/intent/tweet?hashtags=${props.hashtag.slice(
+            1
+        )}&text=${encodeURI(initialText)}`
+    );
 
-    const handleChange = (event: any) => {
-        let { value: text } = event.currentTarget;
-        setProgress(text);
-        setTwitterHref(
-            `https://twitter.com/intent/tweet?hashtags=${props.hashtag.slice(
-                1
-            )}&text="${encodeURI(text)}"`
-        );
-    };
-
-    const handleSubmit = async (event: any) => {
-        event.preventDefault();
-        console.log("add-detail", props.id);
+    async function saveDetail(url: string) {
         try {
-            await fetch(`${BASE_URL}/detail/${props.id}`, {
+            await fetch(`${url}/detail/${props.id}`, {
                 method: "POST",
                 mode: "cors",
                 credentials: "same-origin",
@@ -38,18 +32,31 @@ const AddDetail = (props: Props) => {
             })
                 .then(() => {
                     console.log("Succeed posting data to server.");
-                    setProgress("");
+                    setProgress(`\n${props.hashtag}`);
                 })
                 .then(() => {
-                    props.getAllDetails(`${BASE_URL}/detail/${props.id}`);
+                    props.getAllDetails(`${url}/detail/${props.id}`);
                 });
         } catch (error) {
             console.error(error);
         }
+    }
+
+    const handleChange = (event: any) => {
+        let { value: text } = event.currentTarget;
+        setProgress(text);
+        setTwitterHref(
+            `https://twitter.com/intent/tweet?hashtags=${props.hashtag.slice(
+                1
+            )}&text=${encodeURI(text)}`
+        );
     };
 
-    const handleSubmitAndTweet = (event: any) => {
-        event.preventDefault();
+    const handleSubmit = (event: any) => {
+        if (event.currentTarget instanceof HTMLFormElement) {
+            event.preventDefault();
+        }
+        saveDetail(BASE_URL);
     };
 
     return (
@@ -64,24 +71,30 @@ const AddDetail = (props: Props) => {
                     id='progress'
                     rows={5}
                     maxLength={140}
-                    required
                     placeholder={progress}
                     value={progress}
                     onChange={handleChange}></textarea>
                 <Divider space={2} />
                 <Wrapper classname='flex flex-wrap justify-around'>
-                    <button type='submit' className='btn btn-teal-400'>
+                    <Button
+                        type='submit'
+                        bgColor='teal-200'
+                        textColor='teal-700'>
                         Save
-                    </button>
-                    <button type='submit' className='btn btn-teal-400 text-indigo-700'>
+                    </Button>
+                    <Button
+                        type='button'
+                        bgColor='teal-700'
+                        textColor='teal-100'>
                         <a
                             href={twitterHref}
                             target='_blank'
                             rel='noopener noreferrer'
-                            tabIndex={-1}>
+                            tabIndex={-1}
+                            onClick={handleSubmit}>
                             Tweet & Save
                         </a>
-                    </button>
+                    </Button>
                 </Wrapper>
             </div>
         </form>
