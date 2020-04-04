@@ -29,7 +29,7 @@ const DetailChallenge = (props: Props) => {
 
     async function getAllDetails(url: string) {
         try {
-            const response = await fetch(url).then(res => res.json());
+            const response = await fetch(url).then((res) => res.json());
             setDetailList(response);
         } catch (error) {
             console.log(error);
@@ -60,18 +60,18 @@ const DetailChallenge = (props: Props) => {
     } else {
         return (
             <Fragment>
-                <Divider space={10} />
+                <Divider space={5} />
                 <AddDetail
                     id={id}
                     hashtag={hashtag}
                     getAllDetails={getAllDetails}
                 />
-                <Divider space={5} />
-                <ol className='max-w-md mx-auto'>
+                <Divider space={6} />
+                <ol className='max-w-md mx-auto bg-teal-300 rounded-lg overflow-hidden'>
                     {detailList.map((detail, i) => {
                         return (
                             <li
-                                className='px-6 py-2 rounded-md bg-green-400 mb-2 shadow-md border border-green-600'
+                                className='px-6 py-4 w-full border-b-2 border-teal-400'
                                 key={`${detail.parent_id}-${i}`}>
                                 <p className='first-line-bold whitespace-pre-wrap'>
                                     {detail.tweet}
@@ -80,6 +80,7 @@ const DetailChallenge = (props: Props) => {
                         );
                     })}
                 </ol>
+                <Divider space={8} />
             </Fragment>
         );
     }

@@ -15,11 +15,16 @@ interface IChallenge {
 
 const Home = (props: Props) => {
     const [challengeList, setChallengeList] = useState<Array<IChallenge>>([]);
+    const dateOptions = {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+    };
 
     useEffect(() => {
         async function getAllChallenges(url: string) {
             try {
-                const response = await fetch(url).then(res => res.json());
+                const response = await fetch(url).then((res) => res.json());
                 setChallengeList(response);
             } catch (error) {
                 console.log(error);
@@ -34,32 +39,43 @@ const Home = (props: Props) => {
     } else {
         return (
             <Fragment>
-                <Divider space={10} />
+                <Divider space={5} />
+                <div className='max-w-full'>
+                    <h2 className='text-center text-2xl font-bold'>
+                        <span>⭐️</span> My Journey to Awesomeness! <span>⭐️</span>
+                    </h2>
+                </div>
+                <Divider space={5} />
                 <ul className='text-xl max-w-md mx-auto'>
-                    {challengeList.map(challenge => {
+                    {challengeList.map((challenge) => {
                         return (
                             <li
                                 key={challenge.challenge_id}
-                                className='bg-purple-400 rounded-lg shadow-lg border border-pink-600 mb-4'>
+                                className='rounded-lg border border-purple-600 mb-4 card'>
                                 <Link
-                                    className='py-4 px-6 block'
+                                    className='block'
                                     to={{
                                         pathname: `detail/${challenge.challenge_id}`,
                                         state: {
                                             hashtag: challenge.hash_tag,
                                         },
                                     }}>
-                                    <p>
-                                        Title:{" "}
-                                        <strong className='font-bold'>
+                                    <div className='flex flex-wrap justify-between capitalize  bg-purple-400 p-4'>
+                                        <h3 className='inline-flex font-bold'>
                                             {challenge.title}
-                                        </strong>
+                                        </h3>
+                                        <p className='inline-flex text-gray-900 opacity-75 text-sm'>
+                                            {new Intl.DateTimeFormat(
+                                                "default",
+                                                dateOptions
+                                            ).format(challenge.date_created)}
+                                        </p>
+                                    </div>
+                                    <p className='text-gray-800 opacity-75 px-4 pt-2'>
+                                        {challenge.goal}
                                     </p>
-                                    <p>
-                                        Personal goal:{" "}
-                                        <strong className='font-bold'>
-                                            {challenge.goal}
-                                        </strong>
+                                    <p className='text-gray-800 opacity-75 text-sm px-4 pb-4'>
+                                        {challenge.hash_tag}
                                     </p>
                                 </Link>
                             </li>

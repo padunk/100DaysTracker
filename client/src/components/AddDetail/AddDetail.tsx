@@ -11,6 +11,17 @@ interface Props {
 
 const AddDetail = (props: Props) => {
     const [progress, setProgress] = useState<string>(`\n${props.hashtag}`);
+    const [twitterHref, setTwitterHref] = useState<string>("");
+
+    const handleChange = (event: any) => {
+        let { value: text } = event.currentTarget;
+        setProgress(text);
+        setTwitterHref(
+            `https://twitter.com/intent/tweet?hashtags=${props.hashtag.slice(
+                1
+            )}&text="${encodeURI(text)}"`
+        );
+    };
 
     const handleSubmit = async (event: any) => {
         event.preventDefault();
@@ -36,7 +47,10 @@ const AddDetail = (props: Props) => {
             console.error(error);
         }
     };
-    // .attr('href', 'https://twitter.com/intent/tweet?hashtags=quoteoftheday&text=' + '"' + currentQuote + '" ' + currentAuthor
+
+    const handleSubmitAndTweet = (event: any) => {
+        event.preventDefault();
+    };
 
     return (
         <form
@@ -45,28 +59,23 @@ const AddDetail = (props: Props) => {
             className='max-w-md p-4 rounded-md bg-teal-400 mx-auto border-teal-600 border shadow-lg'>
             <div>
                 <textarea
-                    className='w-full rounded-md px-4 py-1 shadow-inner bg-gray-300'
+                    className='w-full rounded-md px-4 py-1 shadow-inner bg-gray-300 resize-none'
                     name='progress'
                     id='progress'
                     rows={5}
+                    maxLength={140}
                     required
                     placeholder={progress}
                     value={progress}
-                    onChange={event =>
-                        setProgress(event.target.value)
-                    }></textarea>
+                    onChange={handleChange}></textarea>
                 <Divider space={2} />
                 <Wrapper classname='flex flex-wrap justify-around'>
-                    <button
-                        type='submit'
-                        className='px-3 py-1 bg-orange-500 shadow-md hover:bg-orange-400 transition duration-300 font-bold rounded-md'>
+                    <button type='submit' className='btn btn-teal-400'>
                         Save
                     </button>
-                    <button
-                        type='submit'
-                        className='px-3 py-1 bg-orange-500 shadow-md hover:bg-orange-400 transition duration-300 font-bold rounded-md'>
+                    <button type='submit' className='btn btn-teal-400 text-indigo-700'>
                         <a
-                            href='http://twitter.com'
+                            href={twitterHref}
                             target='_blank'
                             rel='noopener noreferrer'
                             tabIndex={-1}>
