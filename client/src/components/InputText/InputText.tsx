@@ -19,6 +19,7 @@ export default function InputText(props: Props): ReactElement {
             onChange={event => props.handleChange(event)}
             required={props.req}
             value={props.val}
+            autoComplete='off'
         />
     );
 }
