@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Divider = (props: Props) => {
-    return <div className={`m-${props.space}`}></div>;
+    return <div className={`h-${props.space}`}></div>;
 };
 
 export default Divider;
