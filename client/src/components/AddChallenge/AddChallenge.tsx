@@ -4,11 +4,13 @@ import Wrapper from "../Wrapper/Wrapper";
 import InputLabel from "../InputLabel/InputLabel";
 import InputText from "../InputText/InputText";
 import { BASE_URL } from "../../base/baseURL";
+import Button from "../Button/Button";
 
 interface Props {}
 
 const AddChallenge = (props: Props) => {
-    const inputWrapperClass = "grid grid-cols-1 col-gap-4 px-4 sm:grid-cols-2";
+    const inputWrapperClass =
+        "grid grid-cols-1 col-gap-4 px-4 sm:grid-cols-form";
 
     const [title, setTitle] = useState<string>("");
     const [hashtag, setHashtag] = useState<string>("");
@@ -40,7 +42,7 @@ const AddChallenge = (props: Props) => {
             <Divider space={10} />
             <form
                 action='post'
-                className='container mx-auto bg-pink-400 py-4 rounded-lg max-w-md shadow-lg'
+                className='container mx-auto bg-teal-400 py-4 rounded-lg max-w-md shadow-lg'
                 onSubmit={handleSubmit}>
                 <Wrapper classname={inputWrapperClass}>
                     <InputLabel for='title' />
@@ -50,7 +52,7 @@ const AddChallenge = (props: Props) => {
                         val={title}
                         placeholder='Learn JavaScript'
                         handleChange={(event: any) =>
-                            setTitle(event.target.value)
+                            setTitle(event.target.value.trim())
                         }
                     />
                 </Wrapper>
@@ -63,7 +65,7 @@ const AddChallenge = (props: Props) => {
                         val={hashtag}
                         placeholder='#100DaysOfCode'
                         handleChange={(event: any) =>
-                            setHashtag(event.target.value)
+                            setHashtag(event.target.value.trim())
                         }
                     />
                 </Wrapper>
@@ -76,17 +78,18 @@ const AddChallenge = (props: Props) => {
                         val={goal}
                         placeholder='Cool Web Developer'
                         handleChange={(event: any) =>
-                            setGoal(event.target.value)
+                            setGoal(event.target.value.trim())
                         }
                     />
                 </Wrapper>
                 <Divider space={5} />
                 <Wrapper classname='flex justify-center'>
-                    <button
+                    <Button
                         type='submit'
-                        className='font-bold bg-purple-600 rounded-sm px-5 py-2 text-white hover:bg-purple-500 hover:text-gray-900 transition duration-300 shadow-md'>
+                        bgColor='teal-700'
+                        textColor='teal-100'>
                         Add Challenge
-                    </button>
+                    </Button>
                 </Wrapper>
             </form>
         </div>
