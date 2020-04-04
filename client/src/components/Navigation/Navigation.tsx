@@ -61,7 +61,7 @@ const Navigation = (props: Props) => {
             <div className='hover-nav'>
                 <Link to='/'>
                     <h1 className='font-bold text-3xl text-center uppercase '>
-                        #<span>💯</span>Days-Tracker
+                        #<span role='img' aria-label='100 emoji'>💯</span>Days-Tracker
                     </h1>
                 </Link>
             </div>

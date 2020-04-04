@@ -42,7 +42,7 @@ const Home = (props: Props) => {
                 <Divider space={5} />
                 <div className='max-w-full'>
                     <h2 className='text-center text-2xl font-bold'>
-                        <span>⭐️</span> My Journey to Awesomeness! <span>⭐️</span>
+                        <span role='img' aria-label='star emoji'>⭐️</span> My Journey to Awesomeness! <span role='img' aria-label='star emoji'>⭐️</span>
                     </h2>
                 </div>
                 <Divider space={5} />
