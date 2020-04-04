@@ -38,7 +38,7 @@ APP.get("/detail/:challengeID", (req, res, next) => {
         SELECT * 
         FROM challenge_detail 
         WHERE parent_id='${id}' 
-        ORDER BY rowid ASC
+        ORDER BY rowid DESC
     `;
 
     db.all(query, (err, rows) => {
