@@ -14,6 +14,10 @@ h6 {
     font-family: "Rosario", sans-serif;
 }
 
+button:hover {
+    @apply transform -translate-y-px shadow-md transition duration-300;
+}
+
 @tailwind components;
 
 .hover-nav:hover {
@@ -24,15 +28,6 @@ h6 {
 }
 .first-line-bold::first-line {
     font-weight: bold;
-}
-.btn {
-    @apply px-3 py-1 shadow-md font-bold rounded-md;
-}
-.btn-teal-400 {
-    @apply bg-teal-400 border border-teal-300;
-}
-.btn-teal-400:hover {
-    @apply shadow-inner border-teal-500 transition duration-300;
 }
 .card:hover {
     @apply transform -translate-y-1 shadow-md transition duration-300;
