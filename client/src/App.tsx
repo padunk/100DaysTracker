@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import AddChallenge from "./components/AddChallenge/AddChallenge";
 import DetailChallenge from "./components/DetailChallenge/DetailChallenge";
-import SkillList from "./components/SkillList/SkillList";
+import Skills from "./components/Skills/Skills";
 import Layout from "./layout/Layout";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
                     path='/detail/:challengeID'
                     component={DetailChallenge}
                 />
-                <Route path='/skill-list' component={SkillList} />
+                <Route path='/skills' component={Skills} />
             </Switch>
         </Layout>
     );
