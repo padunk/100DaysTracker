@@ -1,12 +1,14 @@
-import React, { ReactNode} from "react";
+import React, { ReactNode } from "react";
+import classNames from "classnames";
 
 interface Props {
-    classname: string;
     children: ReactNode;
+    customClass?: string;
 }
 
 const Wrapper = (props: Props) => {
-    return <div className={props.classname}>{props.children}</div>;
+    const wrapperClass = classNames(props.customClass);
+    return <div className={wrapperClass}>{props.children}</div>;
 };
 
 export default Wrapper;
