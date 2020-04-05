@@ -12,7 +12,7 @@ interface Props {
 
 const AddDetail = (props: Props) => {
     const [progress, setProgress] = useState<string>(`\n${props.hashtag}`);
-    let initialText = `Today I\'m committing to do`;
+    let initialText = `Today I'm committing to do`;
     const [twitterHref, setTwitterHref] = useState<string>(
         `https://twitter.com/intent/tweet?hashtags=${props.hashtag.slice(
             1
@@ -78,14 +78,12 @@ const AddDetail = (props: Props) => {
                 <Wrapper classname='flex flex-wrap justify-around'>
                     <Button
                         type='submit'
-                        bgColor='teal-200'
-                        textColor='teal-700'>
+                        customClass='bg-teal-200 text-teal-700'>
                         Save
                     </Button>
                     <Button
                         type='button'
-                        bgColor='teal-700'
-                        textColor='teal-100'>
+                        customClass='bg-teal-700 text-teal-100'>
                         <a
                             href={twitterHref}
                             target='_blank'

@@ -1,20 +1,18 @@
 import React, { ReactNode } from "react";
+import classNames from "classnames";
 
 interface Props {
     type: any;
-    bgColor: string;
-    textColor: string;
     children: ReactNode;
+    customClass?: string;
 }
 
 const defaultClass = "px-3 py-1 font-bold rounded-md";
 
 const Button = (props: Props) => {
-    const classnames = defaultClass.concat(
-        ` bg-${props.bgColor} text-${props.textColor}`
-    );
+    const btnClass = classNames(defaultClass, props.customClass);
     return (
-        <button type={props.type} className={classnames}>
+        <button type={props.type} className={btnClass}>
             {props.children}
         </button>
     );
