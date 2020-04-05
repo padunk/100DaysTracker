@@ -16,7 +16,7 @@ APP.use(cors());
 const db = new sqlite3.Database(
     "./database/challenges.db",
     sqlite3.OPEN_READWRITE,
-    err => {
+    (err) => {
         if (err) {
             console.error(err.message);
         } else {
@@ -76,13 +76,19 @@ APP.post("/add", (req, res, next) => {
     const data = [id, title, hashtag, goal, date];
 
     const insert = `INSERT INTO challenge VALUES(?, ?, ?, ?, ?)`;
-    db.run(insert, data, err => {
+    db.run(insert, data, (err) => {
         if (err) {
             console.error(err.message);
             return;
         }
         console.log("Save to database: SUCCESS");
         res.end();
+    });
+});
+
+APP.get("/skills", (req, res, next) => {
+    db.all("SELECT * FROM skill_list", (err, rows) => {
+        res.end(JSON.stringify(rows));
     });
 });
 
