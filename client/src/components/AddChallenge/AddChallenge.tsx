@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEventHandler } from "react";
+import React, { useState} from "react";
 import Divider from "../Divider/Divider";
 import Wrapper from "../Wrapper/Wrapper";
 import InputLabel from "../InputLabel/InputLabel";
@@ -44,7 +44,7 @@ const AddChallenge = (props: Props) => {
                 action='post'
                 className='container mx-auto bg-teal-400 py-4 rounded-lg max-w-md shadow-lg'
                 onSubmit={handleSubmit}>
-                <Wrapper classname={inputWrapperClass}>
+                <Wrapper customClass={inputWrapperClass}>
                     <InputLabel for='title' />
                     <InputText
                         name='title'
@@ -57,7 +57,7 @@ const AddChallenge = (props: Props) => {
                     />
                 </Wrapper>
                 <Divider space={2} />
-                <Wrapper classname={inputWrapperClass}>
+                <Wrapper customClass={inputWrapperClass}>
                     <InputLabel for='hashtag' />
                     <InputText
                         name='hashtag'
@@ -70,7 +70,7 @@ const AddChallenge = (props: Props) => {
                     />
                 </Wrapper>
                 <Divider space={2} />
-                <Wrapper classname={inputWrapperClass}>
+                <Wrapper customClass={inputWrapperClass}>
                     <InputLabel for='personalGoal' />
                     <InputText
                         name='personalGoal'
@@ -83,7 +83,7 @@ const AddChallenge = (props: Props) => {
                     />
                 </Wrapper>
                 <Divider space={5} />
-                <Wrapper classname='flex justify-center'>
+                <Wrapper customClass='flex justify-center'>
                     <Button
                         type='submit'
                         customClass='bg-teal-700 text-teal-100'>

@@ -75,7 +75,7 @@ const AddDetail = (props: Props) => {
                     value={progress}
                     onChange={handleChange}></textarea>
                 <Divider space={2} />
-                <Wrapper classname='flex flex-wrap justify-around'>
+                <Wrapper customClass='flex flex-wrap justify-around'>
                     <Button
                         type='submit'
                         customClass='bg-teal-200 text-teal-700'>
