@@ -1,7 +1,9 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment, useRef } from "react";
 import { Link } from "react-router-dom";
 import Divider from "../Divider/Divider";
 import { BASE_URL } from "../../base/baseURL";
+import Metered from "../Metered/Metered";
+import SubTitle from "../SubTitle/SubTitle";
 
 interface Props {}
 
@@ -15,6 +17,7 @@ interface IChallenge {
 
 const Home = (props: Props) => {
     const [challengeList, setChallengeList] = useState<Array<IChallenge>>([]);
+    let progress = useRef<number[]>([]);
     const dateOptions = {
         day: "numeric",
         month: "short",
@@ -24,7 +27,16 @@ const Home = (props: Props) => {
     useEffect(() => {
         async function getAllChallenges(url: string) {
             try {
-                const response = await fetch(url).then((res) => res.json());
+                const response: Array<IChallenge> = await fetch(
+                    url
+                ).then((res) => res.json());
+
+                progress.current = await Promise.all(
+                    response.map((r) =>
+                        getChallengeDetail(BASE_URL, r.challenge_id)
+                    )
+                );
+
                 setChallengeList(response);
             } catch (error) {
                 console.log(error);
@@ -34,20 +46,28 @@ const Home = (props: Props) => {
         getAllChallenges(BASE_URL);
     }, []);
 
+    async function getChallengeDetail(url: string, id: string) {
+        try {
+            const response = await fetch(`${url}/detail/${id}`).then((res) =>
+                res.json()
+            );
+            return response.length;
+        } catch (error) {
+            console.log(error);
+            return;
+        }
+    }
+
     if (challengeList.length === 0) {
         return <div>Loading</div>;
     } else {
         return (
             <Fragment>
                 <Divider space={5} />
-                <div className='max-w-full'>
-                    <h2 className='text-center text-2xl font-bold'>
-                        <span role='img' aria-label='star emoji'>⭐️</span> My Journey to Awesomeness! <span role='img' aria-label='star emoji'>⭐️</span>
-                    </h2>
-                </div>
+                <SubTitle subtitle='My Journey to Awesomeness!' emoji='⭐️' />
                 <Divider space={5} />
                 <ul className='text-xl max-w-md mx-auto'>
-                    {challengeList.map((challenge) => {
+                    {challengeList.map((challenge, idx) => {
                         return (
                             <li
                                 key={challenge.challenge_id}
@@ -71,13 +91,15 @@ const Home = (props: Props) => {
                                             ).format(challenge.date_created)}
                                         </p>
                                     </div>
-                                    <p className='text-gray-800 opacity-75 px-4 pt-2'>
+                                    <p className='text-gray-900 opacity-75 px-4 pt-2'>
                                         {challenge.goal}
                                     </p>
-                                    <p className='text-gray-800 opacity-75 text-sm px-4 pb-4'>
+                                    <p className='text-gray-800 opacity-75 text-sm px-4 pb-2'>
                                         {challenge.hash_tag}
                                     </p>
                                 </Link>
+                                <Metered progress={progress.current[idx]} />
+                                <Divider space={2} />
                             </li>
                         );
                     })}
