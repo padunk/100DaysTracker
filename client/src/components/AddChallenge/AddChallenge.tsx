@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEventHandler } from "react";
 import Divider from "../Divider/Divider";
 import Wrapper from "../Wrapper/Wrapper";
 import InputLabel from "../InputLabel/InputLabel";
@@ -12,9 +12,9 @@ const AddChallenge = (props: Props) => {
     const inputWrapperClass =
         "grid grid-cols-1 col-gap-4 px-4 sm:grid-cols-form";
 
-    const [title, setTitle] = useState<string>("");
-    const [hashtag, setHashtag] = useState<string>("");
-    const [goal, setGoal] = useState<string>("");
+    const [title, setTitle] = useState<string | undefined>("");
+    const [hashtag, setHashtag] = useState<string | undefined>("");
+    const [goal, setGoal] = useState<string | undefined>("");
 
     const handleSubmit = async (event: any) => {
         event.preventDefault();
@@ -51,9 +51,9 @@ const AddChallenge = (props: Props) => {
                         req={true}
                         val={title}
                         placeholder='Learn JavaScript'
-                        handleChange={(event: any) =>
-                            setTitle(event.target.value.trim())
-                        }
+                        handleChange={(
+                            event: React.FormEvent<HTMLInputElement>
+                        ): void => setTitle(event.currentTarget.value.trim())}
                     />
                 </Wrapper>
                 <Divider space={2} />
@@ -64,9 +64,9 @@ const AddChallenge = (props: Props) => {
                         req={true}
                         val={hashtag}
                         placeholder='#100DaysOfCode'
-                        handleChange={(event: any) =>
-                            setHashtag(event.target.value.trim())
-                        }
+                        handleChange={(
+                            event: React.FormEvent<HTMLInputElement>
+                        ): void => setHashtag(event.currentTarget.value.trim())}
                     />
                 </Wrapper>
                 <Divider space={2} />
@@ -77,17 +77,16 @@ const AddChallenge = (props: Props) => {
                         req={false}
                         val={goal}
                         placeholder='Cool Web Developer'
-                        handleChange={(event: any) =>
-                            setGoal(event.target.value.trim())
-                        }
+                        handleChange={(
+                            event: React.FormEvent<HTMLInputElement>
+                        ): void => setGoal(event.currentTarget.value.trim())}
                     />
                 </Wrapper>
                 <Divider space={5} />
                 <Wrapper classname='flex justify-center'>
                     <Button
                         type='submit'
-                        bgColor='teal-700'
-                        textColor='teal-100'>
+                        customClass='bg-teal-700 text-teal-100'>
                         Add Challenge
                     </Button>
                 </Wrapper>
