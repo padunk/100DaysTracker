@@ -92,6 +92,22 @@ APP.get("/skills", (req, res, next) => {
     });
 });
 
+APP.post("/skills", (req, res, next) => {
+    const data = [req.body.newSkill.trim(), 1, 0, 0, +new Date()];
+
+    const insert = `INSERT INTO skill_list VALUES(?, ?, ?, ?, ?)`;
+    db.run(insert, data, function(err) {
+        if (err) {
+            console.error(err.message);
+            res.status(500).send(err.message);
+            return;
+        }
+        console.log("Save to database: SUCCESS");
+        res.status(205).send("Save to database: SUCCESS");
+        res.end();
+    });
+});
+
 APP.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

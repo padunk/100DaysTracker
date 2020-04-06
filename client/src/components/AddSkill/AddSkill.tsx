@@ -5,11 +5,15 @@ import Button from "../Button/Button";
 interface Props {
     skill: string | undefined;
     handleChange: React.FormEventHandler<HTMLInputElement>;
+    handleSubmit: React.FormEventHandler<HTMLFormElement>;
 }
 
 const AddSkill = (props: Props) => {
     return (
-        <form action='POST' className='max-w-xs mx-auto flex justify-center'>
+        <form
+            action='POST'
+            className='max-w-xs mx-auto flex justify-center'
+            onSubmit={props.handleSubmit}>
             <InputText
                 name='add-skill'
                 placeholder='Concurrency'
