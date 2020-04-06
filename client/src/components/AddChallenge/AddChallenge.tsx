@@ -53,7 +53,7 @@ const AddChallenge = (props: Props) => {
                         placeholder='Learn JavaScript'
                         handleChange={(
                             event: React.FormEvent<HTMLInputElement>
-                        ): void => setTitle(event.currentTarget.value.trim())}
+                        ): void => setTitle(event.currentTarget.value)}
                     />
                 </Wrapper>
                 <Divider space={2} />
@@ -66,7 +66,7 @@ const AddChallenge = (props: Props) => {
                         placeholder='#100DaysOfCode'
                         handleChange={(
                             event: React.FormEvent<HTMLInputElement>
-                        ): void => setHashtag(event.currentTarget.value.trim())}
+                        ): void => setHashtag(event.currentTarget.value)}
                     />
                 </Wrapper>
                 <Divider space={2} />
@@ -79,7 +79,7 @@ const AddChallenge = (props: Props) => {
                         placeholder='Cool Web Developer'
                         handleChange={(
                             event: React.FormEvent<HTMLInputElement>
-                        ): void => setGoal(event.currentTarget.value.trim())}
+                        ): void => setGoal(event.currentTarget.value)}
                     />
                 </Wrapper>
                 <Divider space={5} />
