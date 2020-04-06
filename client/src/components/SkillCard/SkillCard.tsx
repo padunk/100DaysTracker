@@ -1,6 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, MouseEventHandler } from "react";
+import classNames from "classnames";
+
 import Wrapper from "../Wrapper/Wrapper";
-import Divider from "../Divider/Divider";
 import SvgShuttle from "../../icons/Shuttle";
 import SvgDelete from "../../icons/Delete";
 import Gap from "../Divider/Gap";
@@ -8,10 +9,11 @@ import SvgUpdateArrow from "../../icons/UpdateArrow";
 import SvgCheckmark from "../../icons/Checkmark";
 
 interface ISkills {
-    skill: string;
+    skill_id: string;
+    skill_name: string;
     new_skill: number;
     progress_skill: number;
-    done_skill: number;
+    complete_skill: number;
     date_created: number;
 }
 
@@ -19,13 +21,20 @@ interface Props {
     id: number;
     title: string;
     skills: Array<ISkills>;
+    handleClick: any;
 }
 
-function SkillDetail({ title, skills, id }: Props): ReactElement {
+function SkillDetail({ title, skills, id, handleClick }: Props): ReactElement {
     let iconsToShow: Array<JSX.Element> = [];
 
     if (id === 1) {
-        iconsToShow = [<SvgShuttle fill='#3182ce' className='w-4 h-4' />];
+        iconsToShow = [
+            <SvgShuttle
+                fill='#3182ce'
+                className='w-4 h-4'
+                onClick={handleClick}
+            />,
+        ];
     } else if (id === 2) {
         iconsToShow = [
             <SvgCheckmark fill='#48bb78' className='w-4 h-4' />,
@@ -41,28 +50,61 @@ function SkillDetail({ title, skills, id }: Props): ReactElement {
             <Wrapper customClass='bg-gray-800 text-white h-10 flex items-center px-4 border border-gray-100'>
                 <h3>{title}</h3>
             </Wrapper>
-            <Divider space={2} />
-            <div>
-                <ul className='px-4'>
-                    {skills.map((skill: any, id: number) => {
-                        return (
-                            <li
-                                key={skill - id}
-                                className='flex flex-wrap justify-between items-center py-2'>
-                                <span className='text-lg'>{skill.skill}</span>
-                                <div className='flex flex-wrap'>
-                                    {iconsToShow.map((icons) => icons)}
-                                    <Gap className='w-4' />
-                                    <SvgDelete
-                                        fill='#e53e3e'
+            <ul>
+                {skills.map((skill: ISkills, idx: number) => {
+                    const listClassNames = classNames(
+                        "flex flex-wrap justify-between items-center py-2 px-4",
+                        { "bg-gray-400": idx % 2 !== 0 }
+                    );
+                    return (
+                        <li key={skill.skill_id} className={listClassNames}>
+                            <span className='text-lg'>{skill.skill_name}</span>
+                            <div className='flex flex-wrap'>
+                                {id === 1 && (
+                                    <SvgShuttle
+                                        id={skill.skill_id}
+                                        fill='#3182ce'
                                         className='w-4 h-4'
+                                        onClick={handleClick}
                                     />
-                                </div>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
+                                )}
+                                {id === 2 && (
+                                    <>
+                                        <SvgCheckmark
+                                            id={skill.skill_id}
+                                            fill='#48bb78'
+                                            className='w-4 h-4'
+                                            onClick={handleClick}
+                                        />
+                                        <Gap className='w-4' />
+                                        <SvgUpdateArrow
+                                            id={skill.skill_id}
+                                            fill='#9f7aea'
+                                            className='w-4 h-4'
+                                            onClick={handleClick}
+                                        />
+                                    </>
+                                )}
+                                {id === 3 && (
+                                    <SvgUpdateArrow
+                                        id={skill.skill_id}
+                                        fill='#9f7aea'
+                                        className='w-4 h-4'
+                                        onClick={handleClick}
+                                    />
+                                )}
+                                <Gap className='w-4' />
+                                <SvgDelete
+                                    id={skill.skill_id}
+                                    fill='#e53e3e'
+                                    className='w-4 h-4'
+                                    onClick={handleClick}
+                                />
+                            </div>
+                        </li>
+                    );
+                })}
+            </ul>
         </Wrapper>
     );
 }
