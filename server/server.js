@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const uuidv4 = require("uuid").v4;
 const sqlite3 = require("sqlite3").verbose();
 
+const { handleError, handleSuccess } = require("./utilities/handleResponse");
+
 const APP = express();
 
 const port = process.env.PORT || 5000;
@@ -26,12 +28,12 @@ const db = new sqlite3.Database(
 );
 
 APP.get("/", (req, res, next) => {
-    db.all("SELECT * FROM challenge", (err, rows) => {
+    db.all("SELECT * FROM challenge", function(err, rows) {
         res.end(JSON.stringify(rows));
     });
-    // db.close();
 });
 
+// DETAIL CHALLENGE ROUTE
 APP.get("/detail/:challengeID", (req, res, next) => {
     const id = req.params.challengeID;
     const query = `
@@ -41,16 +43,15 @@ APP.get("/detail/:challengeID", (req, res, next) => {
         ORDER BY rowid DESC
     `;
 
-    db.all(query, (err, rows) => {
+    db.all(query, function(err, rows) {
         if (err) {
-            console.error(err);
+            handleError(res, err);
         }
         if (rows.length === 0) {
             res.end(JSON.stringify([null]));
         }
         res.end(JSON.stringify(rows));
     });
-    // db.close();
 });
 
 APP.post("/detail/:challengeID", (req, res, next) => {
@@ -61,49 +62,84 @@ APP.post("/detail/:challengeID", (req, res, next) => {
     const insert = `INSERT INTO challenge_detail VALUES(?, ?, ?)`;
     db.run(insert, data, function(err) {
         if (err) {
-            console.error(err.message);
+            handleError(res, err);
             return;
         }
-        console.log("Save to database: SUCCESS");
+        handleSuccess(res, 205, "Success saving to database", parent_id);
         res.end();
     });
 });
 
+// NEW ROUND ROUTE
 APP.post("/add", (req, res, next) => {
     const id = uuidv4();
     const { title, hashtag, goal } = req.body;
     const date = +new Date();
-    const data = [id, title, hashtag, goal, date];
+    const data = [id, title.trim(), hashtag.trim(), goal.trim(), date];
 
     const insert = `INSERT INTO challenge VALUES(?, ?, ?, ?, ?)`;
-    db.run(insert, data, (err) => {
+    db.run(insert, data, function(err) {
         if (err) {
-            console.error(err.message);
+            handleError(res, err);
             return;
         }
-        console.log("Save to database: SUCCESS");
+        handleSuccess(res, 205, "Success saving to database", id);
         res.end();
     });
 });
 
+// SKILLS ROUTE
 APP.get("/skills", (req, res, next) => {
-    db.all("SELECT * FROM skill_list", (err, rows) => {
+    db.all("SELECT * FROM skill_list", function(err, rows) {
+        if (err) {
+            handleError(res, err);
+            return;
+        }
+        // res.status(204);
         res.end(JSON.stringify(rows));
     });
 });
 
 APP.post("/skills", (req, res, next) => {
-    const data = [req.body.newSkill.trim(), 1, 0, 0, +new Date()];
+    const id = uuidv4();
+    const data = [id, req.body.newSkill.trim(), 1, 0, 0, +new Date()];
 
-    const insert = `INSERT INTO skill_list VALUES(?, ?, ?, ?, ?)`;
+    const insert = `INSERT INTO skill_list VALUES(?, ?, ?, ?, ?, ?)`;
     db.run(insert, data, function(err) {
         if (err) {
-            console.error(err.message);
-            res.status(500).send(err.message);
+            handleError(res, err);
             return;
         }
-        console.log("Save to database: SUCCESS");
-        res.status(205).send("Save to database: SUCCESS");
+        handleSuccess(res, 205, "Success saving data with id: ", "" + id);
+        res.end();
+    });
+});
+
+APP.patch("/skills", (req, res, next) => {
+    const { id, new_skill, progress_skill, complete_skill } = req.body;
+    const data = [new_skill, progress_skill, complete_skill, id];
+
+    const insert = `UPDATE skill_list 
+    SET new_skill = ?, progress_skill = ?, complete_skill = ?
+    WHERE skill_id = ?`;
+    db.run(insert, data, function(err) {
+        if (err) {
+            handleError(res, err);
+            return;
+        }
+        handleSuccess(res, 205, "Success updating data with id: ", id);
+        res.end();
+    });
+});
+
+APP.delete("/skills", (req, res, next) => {
+    const { id } = req.body;
+    db.run(`DELETE FROM skill_list WHERE skill_id = ?`, id, function(err) {
+        if (err) {
+            handleError(res, err);
+            return;
+        }
+        handleSuccess(res, 205, "Success deleting data with id: ", id);
         res.end();
     });
 });
