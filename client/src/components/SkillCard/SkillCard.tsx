@@ -1,10 +1,10 @@
-import React, { ReactElement, MouseEventHandler } from "react";
+import React, { ReactElement } from "react";
 import classNames from "classnames";
 
 import Wrapper from "../Wrapper/Wrapper";
 import SvgShuttle from "../../icons/Shuttle";
 import SvgDelete from "../../icons/Delete";
-import Gap from "../Divider/Gap";
+import Gap from "../Gap/Gap";
 import SvgUpdateArrow from "../../icons/UpdateArrow";
 import SvgCheckmark from "../../icons/Checkmark";
 
@@ -25,26 +25,6 @@ interface Props {
 }
 
 function SkillDetail({ title, skills, id, handleClick }: Props): ReactElement {
-    let iconsToShow: Array<JSX.Element> = [];
-
-    if (id === 1) {
-        iconsToShow = [
-            <SvgShuttle
-                fill='#3182ce'
-                className='w-4 h-4'
-                onClick={handleClick}
-            />,
-        ];
-    } else if (id === 2) {
-        iconsToShow = [
-            <SvgCheckmark fill='#48bb78' className='w-4 h-4' />,
-            <Gap className='w-4' />,
-            <SvgUpdateArrow fill='#9f7aea' className='w-4 h-4' />,
-        ];
-    } else if (id === 3) {
-        iconsToShow = [<SvgUpdateArrow fill='#9f7aea' className='w-4 h-4' />];
-    }
-
     return (
         <Wrapper customClass='flex-1'>
             <Wrapper customClass='bg-gray-800 text-white h-10 flex items-center px-4 border border-gray-100'>

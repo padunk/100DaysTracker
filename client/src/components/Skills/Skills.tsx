@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AddSkill from "../AddSkill/AddSkill";
-import Divider from "../Divider/Divider";
+import Gap from "../Gap/Gap";
 import SubTitle from "../SubTitle/SubTitle";
 import Wrapper from "../Wrapper/Wrapper";
 import { BASE_URL } from "../../base/baseURL";
@@ -153,15 +153,15 @@ const Skills = (props: Props) => {
 
     return (
         <div>
-            <Divider space={5} />
+            <Gap className='h-5' />
             <SubTitle subtitle='My New SuperSkills' emoji='🚀' />
-            <Divider space={10} />
+            <Gap className='h-10' />
             <AddSkill
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 skill={newSkill}
             />
-            <Divider space={8} />
+            <Gap className='h-8' />
             <p>{errorMessage}</p>
             <Wrapper customClass='flex flex-row flex-wrap mx-auto justify-around mx-auto max-w-full w-8/12 container'>
                 <SkillCard
