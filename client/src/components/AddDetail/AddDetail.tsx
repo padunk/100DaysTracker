@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Wrapper from "../Wrapper/Wrapper";
-import Divider from "../Divider/Divider";
+import Gap from "../Gap/Gap";
 import { BASE_URL } from "../../base/baseURL";
 import Button from "../Button/Button";
 
@@ -74,7 +74,7 @@ const AddDetail = (props: Props) => {
                     placeholder={progress}
                     value={progress}
                     onChange={handleChange}></textarea>
-                <Divider space={2} />
+                <Gap className='h-2' />
                 <Wrapper customClass='flex flex-wrap justify-around'>
                     <Button
                         type='submit'
