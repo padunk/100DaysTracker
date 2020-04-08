@@ -644,7 +644,7 @@ button:hover {
   --transform-scale-x: 1;
   --transform-scale-y: 1;
   transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
-  color: #2d3748;
+  opacity: 1;
   --transform-translate-y: -0.25rem;
   --transform-scale-x: 1.1;
   --transform-scale-y: 1.1;
@@ -658,16 +658,7 @@ button:hover {
 }
 
 .card:hover {
-  --transform-translate-x: 0;
-  --transform-translate-y: 0;
-  --transform-rotate: 0;
-  --transform-skew-x: 0;
-  --transform-skew-y: 0;
-  --transform-scale-x: 1;
-  --transform-scale-y: 1;
-  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
-  --transform-translate-y: -0.25rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-duration: 300ms;
 }
@@ -1892,14 +1883,6 @@ button:hover {
   background-position: top;
 }
 
-.bg-top-2 {
-  background-position: center top 2rem;
-}
-
-.bg-bg-lg {
-  background-position: 55vw 5rem;
-}
-
 .bg-repeat {
   background-repeat: repeat;
 }
@@ -1924,6 +1907,18 @@ button:hover {
   background-repeat: space;
 }
 
+.bg-auto {
+  background-size: auto;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
 .bg-1\/4 {
   background-size: 25%;
 }
@@ -1941,7 +1936,7 @@ button:hover {
 }
 
 .bg-3\/4 {
-  background-size: 100%;
+  background-size: 75%;
 }
 
 .border-collapse {
@@ -6832,6 +6827,34 @@ button:hover {
   left: 100%;
 }
 
+.inset-1rem {
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.inset-2rem {
+  top: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.inset-4rem {
+  top: 4rem;
+  right: 4rem;
+  bottom: 4rem;
+  left: 4rem;
+}
+
+.inset-6rem {
+  top: 6rem;
+  right: 6rem;
+  bottom: 6rem;
+  left: 6rem;
+}
+
 .inset-y-1\/4 {
   top: 25%;
   bottom: 25%;
@@ -6880,6 +6903,46 @@ button:hover {
 .inset-x-3\/4 {
   right: 100%;
   left: 100%;
+}
+
+.inset-y-1rem {
+  top: 1rem;
+  bottom: 1rem;
+}
+
+.inset-x-1rem {
+  right: 1rem;
+  left: 1rem;
+}
+
+.inset-y-2rem {
+  top: 2rem;
+  bottom: 2rem;
+}
+
+.inset-x-2rem {
+  right: 2rem;
+  left: 2rem;
+}
+
+.inset-y-4rem {
+  top: 4rem;
+  bottom: 4rem;
+}
+
+.inset-x-4rem {
+  right: 4rem;
+  left: 4rem;
+}
+
+.inset-y-6rem {
+  top: 6rem;
+  bottom: 6rem;
+}
+
+.inset-x-6rem {
+  right: 6rem;
+  left: 6rem;
 }
 
 .top-1\/4 {
@@ -6960,6 +7023,70 @@ button:hover {
 
 .left-3\/4 {
   left: 100%;
+}
+
+.top-1rem {
+  top: 1rem;
+}
+
+.right-1rem {
+  right: 1rem;
+}
+
+.bottom-1rem {
+  bottom: 1rem;
+}
+
+.left-1rem {
+  left: 1rem;
+}
+
+.top-2rem {
+  top: 2rem;
+}
+
+.right-2rem {
+  right: 2rem;
+}
+
+.bottom-2rem {
+  bottom: 2rem;
+}
+
+.left-2rem {
+  left: 2rem;
+}
+
+.top-4rem {
+  top: 4rem;
+}
+
+.right-4rem {
+  right: 4rem;
+}
+
+.bottom-4rem {
+  bottom: 4rem;
+}
+
+.left-4rem {
+  left: 4rem;
+}
+
+.top-6rem {
+  top: 6rem;
+}
+
+.right-6rem {
+  right: 6rem;
+}
+
+.bottom-6rem {
+  bottom: 6rem;
+}
+
+.left-6rem {
+  left: 6rem;
 }
 
 .resize-none {
@@ -12354,14 +12481,6 @@ button:hover {
     background-position: top;
   }
 
-  .sm\:bg-top-2 {
-    background-position: center top 2rem;
-  }
-
-  .sm\:bg-bg-lg {
-    background-position: 55vw 5rem;
-  }
-
   .sm\:bg-repeat {
     background-repeat: repeat;
   }
@@ -12386,6 +12505,18 @@ button:hover {
     background-repeat: space;
   }
 
+  .sm\:bg-auto {
+    background-size: auto;
+  }
+
+  .sm\:bg-cover {
+    background-size: cover;
+  }
+
+  .sm\:bg-contain {
+    background-size: contain;
+  }
+
   .sm\:bg-1\/4 {
     background-size: 25%;
   }
@@ -12403,7 +12534,7 @@ button:hover {
   }
 
   .sm\:bg-3\/4 {
-    background-size: 100%;
+    background-size: 75%;
   }
 
   .sm\:border-collapse {
@@ -17294,6 +17425,34 @@ button:hover {
     left: 100%;
   }
 
+  .sm\:inset-1rem {
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .sm\:inset-2rem {
+    top: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .sm\:inset-4rem {
+    top: 4rem;
+    right: 4rem;
+    bottom: 4rem;
+    left: 4rem;
+  }
+
+  .sm\:inset-6rem {
+    top: 6rem;
+    right: 6rem;
+    bottom: 6rem;
+    left: 6rem;
+  }
+
   .sm\:inset-y-1\/4 {
     top: 25%;
     bottom: 25%;
@@ -17342,6 +17501,46 @@ button:hover {
   .sm\:inset-x-3\/4 {
     right: 100%;
     left: 100%;
+  }
+
+  .sm\:inset-y-1rem {
+    top: 1rem;
+    bottom: 1rem;
+  }
+
+  .sm\:inset-x-1rem {
+    right: 1rem;
+    left: 1rem;
+  }
+
+  .sm\:inset-y-2rem {
+    top: 2rem;
+    bottom: 2rem;
+  }
+
+  .sm\:inset-x-2rem {
+    right: 2rem;
+    left: 2rem;
+  }
+
+  .sm\:inset-y-4rem {
+    top: 4rem;
+    bottom: 4rem;
+  }
+
+  .sm\:inset-x-4rem {
+    right: 4rem;
+    left: 4rem;
+  }
+
+  .sm\:inset-y-6rem {
+    top: 6rem;
+    bottom: 6rem;
+  }
+
+  .sm\:inset-x-6rem {
+    right: 6rem;
+    left: 6rem;
   }
 
   .sm\:top-1\/4 {
@@ -17422,6 +17621,70 @@ button:hover {
 
   .sm\:left-3\/4 {
     left: 100%;
+  }
+
+  .sm\:top-1rem {
+    top: 1rem;
+  }
+
+  .sm\:right-1rem {
+    right: 1rem;
+  }
+
+  .sm\:bottom-1rem {
+    bottom: 1rem;
+  }
+
+  .sm\:left-1rem {
+    left: 1rem;
+  }
+
+  .sm\:top-2rem {
+    top: 2rem;
+  }
+
+  .sm\:right-2rem {
+    right: 2rem;
+  }
+
+  .sm\:bottom-2rem {
+    bottom: 2rem;
+  }
+
+  .sm\:left-2rem {
+    left: 2rem;
+  }
+
+  .sm\:top-4rem {
+    top: 4rem;
+  }
+
+  .sm\:right-4rem {
+    right: 4rem;
+  }
+
+  .sm\:bottom-4rem {
+    bottom: 4rem;
+  }
+
+  .sm\:left-4rem {
+    left: 4rem;
+  }
+
+  .sm\:top-6rem {
+    top: 6rem;
+  }
+
+  .sm\:right-6rem {
+    right: 6rem;
+  }
+
+  .sm\:bottom-6rem {
+    bottom: 6rem;
+  }
+
+  .sm\:left-6rem {
+    left: 6rem;
   }
 
   .sm\:resize-none {
@@ -22781,14 +23044,6 @@ button:hover {
     background-position: top;
   }
 
-  .md\:bg-top-2 {
-    background-position: center top 2rem;
-  }
-
-  .md\:bg-bg-lg {
-    background-position: 55vw 5rem;
-  }
-
   .md\:bg-repeat {
     background-repeat: repeat;
   }
@@ -22813,6 +23068,18 @@ button:hover {
     background-repeat: space;
   }
 
+  .md\:bg-auto {
+    background-size: auto;
+  }
+
+  .md\:bg-cover {
+    background-size: cover;
+  }
+
+  .md\:bg-contain {
+    background-size: contain;
+  }
+
   .md\:bg-1\/4 {
     background-size: 25%;
   }
@@ -22830,7 +23097,7 @@ button:hover {
   }
 
   .md\:bg-3\/4 {
-    background-size: 100%;
+    background-size: 75%;
   }
 
   .md\:border-collapse {
@@ -27721,6 +27988,34 @@ button:hover {
     left: 100%;
   }
 
+  .md\:inset-1rem {
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .md\:inset-2rem {
+    top: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .md\:inset-4rem {
+    top: 4rem;
+    right: 4rem;
+    bottom: 4rem;
+    left: 4rem;
+  }
+
+  .md\:inset-6rem {
+    top: 6rem;
+    right: 6rem;
+    bottom: 6rem;
+    left: 6rem;
+  }
+
   .md\:inset-y-1\/4 {
     top: 25%;
     bottom: 25%;
@@ -27769,6 +28064,46 @@ button:hover {
   .md\:inset-x-3\/4 {
     right: 100%;
     left: 100%;
+  }
+
+  .md\:inset-y-1rem {
+    top: 1rem;
+    bottom: 1rem;
+  }
+
+  .md\:inset-x-1rem {
+    right: 1rem;
+    left: 1rem;
+  }
+
+  .md\:inset-y-2rem {
+    top: 2rem;
+    bottom: 2rem;
+  }
+
+  .md\:inset-x-2rem {
+    right: 2rem;
+    left: 2rem;
+  }
+
+  .md\:inset-y-4rem {
+    top: 4rem;
+    bottom: 4rem;
+  }
+
+  .md\:inset-x-4rem {
+    right: 4rem;
+    left: 4rem;
+  }
+
+  .md\:inset-y-6rem {
+    top: 6rem;
+    bottom: 6rem;
+  }
+
+  .md\:inset-x-6rem {
+    right: 6rem;
+    left: 6rem;
   }
 
   .md\:top-1\/4 {
@@ -27849,6 +28184,70 @@ button:hover {
 
   .md\:left-3\/4 {
     left: 100%;
+  }
+
+  .md\:top-1rem {
+    top: 1rem;
+  }
+
+  .md\:right-1rem {
+    right: 1rem;
+  }
+
+  .md\:bottom-1rem {
+    bottom: 1rem;
+  }
+
+  .md\:left-1rem {
+    left: 1rem;
+  }
+
+  .md\:top-2rem {
+    top: 2rem;
+  }
+
+  .md\:right-2rem {
+    right: 2rem;
+  }
+
+  .md\:bottom-2rem {
+    bottom: 2rem;
+  }
+
+  .md\:left-2rem {
+    left: 2rem;
+  }
+
+  .md\:top-4rem {
+    top: 4rem;
+  }
+
+  .md\:right-4rem {
+    right: 4rem;
+  }
+
+  .md\:bottom-4rem {
+    bottom: 4rem;
+  }
+
+  .md\:left-4rem {
+    left: 4rem;
+  }
+
+  .md\:top-6rem {
+    top: 6rem;
+  }
+
+  .md\:right-6rem {
+    right: 6rem;
+  }
+
+  .md\:bottom-6rem {
+    bottom: 6rem;
+  }
+
+  .md\:left-6rem {
+    left: 6rem;
   }
 
   .md\:resize-none {
@@ -33208,14 +33607,6 @@ button:hover {
     background-position: top;
   }
 
-  .lg\:bg-top-2 {
-    background-position: center top 2rem;
-  }
-
-  .lg\:bg-bg-lg {
-    background-position: 55vw 5rem;
-  }
-
   .lg\:bg-repeat {
     background-repeat: repeat;
   }
@@ -33240,6 +33631,18 @@ button:hover {
     background-repeat: space;
   }
 
+  .lg\:bg-auto {
+    background-size: auto;
+  }
+
+  .lg\:bg-cover {
+    background-size: cover;
+  }
+
+  .lg\:bg-contain {
+    background-size: contain;
+  }
+
   .lg\:bg-1\/4 {
     background-size: 25%;
   }
@@ -33257,7 +33660,7 @@ button:hover {
   }
 
   .lg\:bg-3\/4 {
-    background-size: 100%;
+    background-size: 75%;
   }
 
   .lg\:border-collapse {
@@ -38148,6 +38551,34 @@ button:hover {
     left: 100%;
   }
 
+  .lg\:inset-1rem {
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .lg\:inset-2rem {
+    top: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .lg\:inset-4rem {
+    top: 4rem;
+    right: 4rem;
+    bottom: 4rem;
+    left: 4rem;
+  }
+
+  .lg\:inset-6rem {
+    top: 6rem;
+    right: 6rem;
+    bottom: 6rem;
+    left: 6rem;
+  }
+
   .lg\:inset-y-1\/4 {
     top: 25%;
     bottom: 25%;
@@ -38196,6 +38627,46 @@ button:hover {
   .lg\:inset-x-3\/4 {
     right: 100%;
     left: 100%;
+  }
+
+  .lg\:inset-y-1rem {
+    top: 1rem;
+    bottom: 1rem;
+  }
+
+  .lg\:inset-x-1rem {
+    right: 1rem;
+    left: 1rem;
+  }
+
+  .lg\:inset-y-2rem {
+    top: 2rem;
+    bottom: 2rem;
+  }
+
+  .lg\:inset-x-2rem {
+    right: 2rem;
+    left: 2rem;
+  }
+
+  .lg\:inset-y-4rem {
+    top: 4rem;
+    bottom: 4rem;
+  }
+
+  .lg\:inset-x-4rem {
+    right: 4rem;
+    left: 4rem;
+  }
+
+  .lg\:inset-y-6rem {
+    top: 6rem;
+    bottom: 6rem;
+  }
+
+  .lg\:inset-x-6rem {
+    right: 6rem;
+    left: 6rem;
   }
 
   .lg\:top-1\/4 {
@@ -38276,6 +38747,70 @@ button:hover {
 
   .lg\:left-3\/4 {
     left: 100%;
+  }
+
+  .lg\:top-1rem {
+    top: 1rem;
+  }
+
+  .lg\:right-1rem {
+    right: 1rem;
+  }
+
+  .lg\:bottom-1rem {
+    bottom: 1rem;
+  }
+
+  .lg\:left-1rem {
+    left: 1rem;
+  }
+
+  .lg\:top-2rem {
+    top: 2rem;
+  }
+
+  .lg\:right-2rem {
+    right: 2rem;
+  }
+
+  .lg\:bottom-2rem {
+    bottom: 2rem;
+  }
+
+  .lg\:left-2rem {
+    left: 2rem;
+  }
+
+  .lg\:top-4rem {
+    top: 4rem;
+  }
+
+  .lg\:right-4rem {
+    right: 4rem;
+  }
+
+  .lg\:bottom-4rem {
+    bottom: 4rem;
+  }
+
+  .lg\:left-4rem {
+    left: 4rem;
+  }
+
+  .lg\:top-6rem {
+    top: 6rem;
+  }
+
+  .lg\:right-6rem {
+    right: 6rem;
+  }
+
+  .lg\:bottom-6rem {
+    bottom: 6rem;
+  }
+
+  .lg\:left-6rem {
+    left: 6rem;
   }
 
   .lg\:resize-none {
@@ -43635,14 +44170,6 @@ button:hover {
     background-position: top;
   }
 
-  .xl\:bg-top-2 {
-    background-position: center top 2rem;
-  }
-
-  .xl\:bg-bg-lg {
-    background-position: 55vw 5rem;
-  }
-
   .xl\:bg-repeat {
     background-repeat: repeat;
   }
@@ -43667,6 +44194,18 @@ button:hover {
     background-repeat: space;
   }
 
+  .xl\:bg-auto {
+    background-size: auto;
+  }
+
+  .xl\:bg-cover {
+    background-size: cover;
+  }
+
+  .xl\:bg-contain {
+    background-size: contain;
+  }
+
   .xl\:bg-1\/4 {
     background-size: 25%;
   }
@@ -43684,7 +44223,7 @@ button:hover {
   }
 
   .xl\:bg-3\/4 {
-    background-size: 100%;
+    background-size: 75%;
   }
 
   .xl\:border-collapse {
@@ -48575,6 +49114,34 @@ button:hover {
     left: 100%;
   }
 
+  .xl\:inset-1rem {
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .xl\:inset-2rem {
+    top: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .xl\:inset-4rem {
+    top: 4rem;
+    right: 4rem;
+    bottom: 4rem;
+    left: 4rem;
+  }
+
+  .xl\:inset-6rem {
+    top: 6rem;
+    right: 6rem;
+    bottom: 6rem;
+    left: 6rem;
+  }
+
   .xl\:inset-y-1\/4 {
     top: 25%;
     bottom: 25%;
@@ -48623,6 +49190,46 @@ button:hover {
   .xl\:inset-x-3\/4 {
     right: 100%;
     left: 100%;
+  }
+
+  .xl\:inset-y-1rem {
+    top: 1rem;
+    bottom: 1rem;
+  }
+
+  .xl\:inset-x-1rem {
+    right: 1rem;
+    left: 1rem;
+  }
+
+  .xl\:inset-y-2rem {
+    top: 2rem;
+    bottom: 2rem;
+  }
+
+  .xl\:inset-x-2rem {
+    right: 2rem;
+    left: 2rem;
+  }
+
+  .xl\:inset-y-4rem {
+    top: 4rem;
+    bottom: 4rem;
+  }
+
+  .xl\:inset-x-4rem {
+    right: 4rem;
+    left: 4rem;
+  }
+
+  .xl\:inset-y-6rem {
+    top: 6rem;
+    bottom: 6rem;
+  }
+
+  .xl\:inset-x-6rem {
+    right: 6rem;
+    left: 6rem;
   }
 
   .xl\:top-1\/4 {
@@ -48703,6 +49310,70 @@ button:hover {
 
   .xl\:left-3\/4 {
     left: 100%;
+  }
+
+  .xl\:top-1rem {
+    top: 1rem;
+  }
+
+  .xl\:right-1rem {
+    right: 1rem;
+  }
+
+  .xl\:bottom-1rem {
+    bottom: 1rem;
+  }
+
+  .xl\:left-1rem {
+    left: 1rem;
+  }
+
+  .xl\:top-2rem {
+    top: 2rem;
+  }
+
+  .xl\:right-2rem {
+    right: 2rem;
+  }
+
+  .xl\:bottom-2rem {
+    bottom: 2rem;
+  }
+
+  .xl\:left-2rem {
+    left: 2rem;
+  }
+
+  .xl\:top-4rem {
+    top: 4rem;
+  }
+
+  .xl\:right-4rem {
+    right: 4rem;
+  }
+
+  .xl\:bottom-4rem {
+    bottom: 4rem;
+  }
+
+  .xl\:left-4rem {
+    left: 4rem;
+  }
+
+  .xl\:top-6rem {
+    top: 6rem;
+  }
+
+  .xl\:right-6rem {
+    right: 6rem;
+  }
+
+  .xl\:bottom-6rem {
+    bottom: 6rem;
+  }
+
+  .xl\:left-6rem {
+    left: 6rem;
   }
 
   .xl\:resize-none {

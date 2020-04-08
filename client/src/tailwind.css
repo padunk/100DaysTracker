@@ -21,13 +21,13 @@ button:hover {
 @tailwind components;
 
 .hover-nav:hover {
-    @apply transform text-gray-800 -translate-y-1 scale-110 transition duration-300 ease-in-out;
+    @apply transform opacity-100 -translate-y-1 scale-110 transition duration-300 ease-in-out;
 }
 .first-line-bold::first-line {
     @apply font-bold;
 }
 .card:hover {
-    @apply transform -translate-y-1 shadow-md transition duration-300;
+    @apply shadow-lg transition duration-300;
 }
 
 @tailwind utilities;
