@@ -1,10 +1,11 @@
-import React, { useState} from "react";
-import Divider from "../Divider/Divider";
+import React, { useState } from "react";
+import Gap from "../Gap/Gap";
 import Wrapper from "../Wrapper/Wrapper";
 import InputLabel from "../InputLabel/InputLabel";
 import InputText from "../InputText/InputText";
 import { BASE_URL } from "../../base/baseURL";
 import Button from "../Button/Button";
+import SubTitle from "../SubTitle/SubTitle";
 
 interface Props {}
 
@@ -39,7 +40,9 @@ const AddChallenge = (props: Props) => {
     };
     return (
         <div>
-            <Divider space={10} />
+            <Gap className='h-8' />
+            <SubTitle subtitle='Add new challenge' emoji='🔥' />
+            <Gap className='h-5' />
             <form
                 action='post'
                 className='container mx-auto bg-teal-400 py-4 rounded-lg max-w-md shadow-lg'
@@ -56,7 +59,7 @@ const AddChallenge = (props: Props) => {
                         ): void => setTitle(event.currentTarget.value)}
                     />
                 </Wrapper>
-                <Divider space={2} />
+                <Gap className='h-2' />
                 <Wrapper customClass={inputWrapperClass}>
                     <InputLabel for='hashtag' />
                     <InputText
@@ -69,7 +72,7 @@ const AddChallenge = (props: Props) => {
                         ): void => setHashtag(event.currentTarget.value)}
                     />
                 </Wrapper>
-                <Divider space={2} />
+                <Gap className='h-2' />
                 <Wrapper customClass={inputWrapperClass}>
                     <InputLabel for='personalGoal' />
                     <InputText
@@ -82,7 +85,7 @@ const AddChallenge = (props: Props) => {
                         ): void => setGoal(event.currentTarget.value)}
                     />
                 </Wrapper>
-                <Divider space={5} />
+                <Gap className='h-5' />
                 <Wrapper customClass='flex justify-center'>
                     <Button
                         type='submit'
