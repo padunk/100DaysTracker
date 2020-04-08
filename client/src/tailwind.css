@@ -23,11 +23,8 @@ button:hover {
 .hover-nav:hover {
     @apply transform text-gray-800 -translate-y-1 scale-110 transition duration-300 ease-in-out;
 }
-.hover-nav-svg:hover {
-    @apply transform text-gray-800  rotate-90 transition duration-300 ease-in-out;
-}
 .first-line-bold::first-line {
-    font-weight: bold;
+    @apply font-bold;
 }
 .card:hover {
     @apply transform -translate-y-1 shadow-md transition duration-300;
@@ -43,4 +40,22 @@ button:hover {
 }
 .pli-end {
     place-items: end;
+}
+.active-opacity {
+    opacity: 1;
+}
+.b-t-red {
+    border-top-color: #c53030;
+}
+.b-r-blue {
+    border-right-color: #3182ce;
+}
+.b-b-green {
+    border-bottom-color: #48bb78;
+}
+.b-l-yellow {
+    border-left-color: #ecc94b;
+}
+.test {
+    color: red;
 }

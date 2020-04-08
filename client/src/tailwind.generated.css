@@ -653,24 +653,8 @@ button:hover {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hover-nav-svg:hover {
-  --transform-translate-x: 0;
-  --transform-translate-y: 0;
-  --transform-rotate: 0;
-  --transform-skew-x: 0;
-  --transform-skew-y: 0;
-  --transform-scale-x: 1;
-  --transform-scale-y: 1;
-  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
-  color: #2d3748;
-  --transform-rotate: 90deg;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .first-line-bold::first-line {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .card:hover {
@@ -1872,6 +1856,10 @@ button:hover {
   background-position: bottom;
 }
 
+.bg-bottom-4 {
+  background-position: center bottom 1rem;
+}
+
 .bg-center {
   background-position: center;
 }
@@ -1904,6 +1892,14 @@ button:hover {
   background-position: top;
 }
 
+.bg-top-2 {
+  background-position: center top 2rem;
+}
+
+.bg-bg-lg {
+  background-position: 55vw 5rem;
+}
+
 .bg-repeat {
   background-repeat: repeat;
 }
@@ -1928,16 +1924,24 @@ button:hover {
   background-repeat: space;
 }
 
-.bg-auto {
-  background-size: auto;
+.bg-1\/4 {
+  background-size: 25%;
 }
 
-.bg-cover {
-  background-size: cover;
+.bg-1\/3 {
+  background-size: 33%;
 }
 
-.bg-contain {
-  background-size: contain;
+.bg-1\/2 {
+  background-size: 50%;
+}
+
+.bg-2\/3 {
+  background-size: 67%;
+}
+
+.bg-3\/4 {
+  background-size: 100%;
 }
 
 .border-collapse {
@@ -6793,70 +6797,169 @@ button:hover {
   position: sticky;
 }
 
-.inset-0 {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.inset-1\/4 {
+  top: 25%;
+  right: 25%;
+  bottom: 25%;
+  left: 25%;
 }
 
-.inset-auto {
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
+.inset-1\/3 {
+  top: 33%;
+  right: 33%;
+  bottom: 33%;
+  left: 33%;
 }
 
-.inset-y-0 {
-  top: 0;
-  bottom: 0;
+.inset-1\/2 {
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
 }
 
-.inset-x-0 {
-  right: 0;
-  left: 0;
+.inset-2\/3 {
+  top: 67%;
+  right: 67%;
+  bottom: 67%;
+  left: 67%;
 }
 
-.inset-y-auto {
-  top: auto;
-  bottom: auto;
+.inset-3\/4 {
+  top: 100%;
+  right: 100%;
+  bottom: 100%;
+  left: 100%;
 }
 
-.inset-x-auto {
-  right: auto;
-  left: auto;
+.inset-y-1\/4 {
+  top: 25%;
+  bottom: 25%;
 }
 
-.top-0 {
-  top: 0;
+.inset-x-1\/4 {
+  right: 25%;
+  left: 25%;
 }
 
-.right-0 {
-  right: 0;
+.inset-y-1\/3 {
+  top: 33%;
+  bottom: 33%;
 }
 
-.bottom-0 {
-  bottom: 0;
+.inset-x-1\/3 {
+  right: 33%;
+  left: 33%;
 }
 
-.left-0 {
-  left: 0;
+.inset-y-1\/2 {
+  top: 50%;
+  bottom: 50%;
 }
 
-.top-auto {
-  top: auto;
+.inset-x-1\/2 {
+  right: 50%;
+  left: 50%;
 }
 
-.right-auto {
-  right: auto;
+.inset-y-2\/3 {
+  top: 67%;
+  bottom: 67%;
 }
 
-.bottom-auto {
-  bottom: auto;
+.inset-x-2\/3 {
+  right: 67%;
+  left: 67%;
 }
 
-.left-auto {
-  left: auto;
+.inset-y-3\/4 {
+  top: 100%;
+  bottom: 100%;
+}
+
+.inset-x-3\/4 {
+  right: 100%;
+  left: 100%;
+}
+
+.top-1\/4 {
+  top: 25%;
+}
+
+.right-1\/4 {
+  right: 25%;
+}
+
+.bottom-1\/4 {
+  bottom: 25%;
+}
+
+.left-1\/4 {
+  left: 25%;
+}
+
+.top-1\/3 {
+  top: 33%;
+}
+
+.right-1\/3 {
+  right: 33%;
+}
+
+.bottom-1\/3 {
+  bottom: 33%;
+}
+
+.left-1\/3 {
+  left: 33%;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.right-1\/2 {
+  right: 50%;
+}
+
+.bottom-1\/2 {
+  bottom: 50%;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.top-2\/3 {
+  top: 67%;
+}
+
+.right-2\/3 {
+  right: 67%;
+}
+
+.bottom-2\/3 {
+  bottom: 67%;
+}
+
+.left-2\/3 {
+  left: 67%;
+}
+
+.top-3\/4 {
+  top: 100%;
+}
+
+.right-3\/4 {
+  right: 100%;
+}
+
+.bottom-3\/4 {
+  bottom: 100%;
+}
+
+.left-3\/4 {
+  left: 100%;
 }
 
 .resize-none {
@@ -11006,6 +11109,30 @@ button:hover {
   place-items: end;
 }
 
+.active-opacity {
+  opacity: 1;
+}
+
+.b-t-red {
+  border-top-color: #c53030;
+}
+
+.b-r-blue {
+  border-right-color: #3182ce;
+}
+
+.b-b-green {
+  border-bottom-color: #48bb78;
+}
+
+.b-l-yellow {
+  border-left-color: #ecc94b;
+}
+
+.test {
+  color: red;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
@@ -12191,6 +12318,10 @@ button:hover {
     background-position: bottom;
   }
 
+  .sm\:bg-bottom-4 {
+    background-position: center bottom 1rem;
+  }
+
   .sm\:bg-center {
     background-position: center;
   }
@@ -12223,6 +12354,14 @@ button:hover {
     background-position: top;
   }
 
+  .sm\:bg-top-2 {
+    background-position: center top 2rem;
+  }
+
+  .sm\:bg-bg-lg {
+    background-position: 55vw 5rem;
+  }
+
   .sm\:bg-repeat {
     background-repeat: repeat;
   }
@@ -12247,16 +12386,24 @@ button:hover {
     background-repeat: space;
   }
 
-  .sm\:bg-auto {
-    background-size: auto;
+  .sm\:bg-1\/4 {
+    background-size: 25%;
   }
 
-  .sm\:bg-cover {
-    background-size: cover;
+  .sm\:bg-1\/3 {
+    background-size: 33%;
   }
 
-  .sm\:bg-contain {
-    background-size: contain;
+  .sm\:bg-1\/2 {
+    background-size: 50%;
+  }
+
+  .sm\:bg-2\/3 {
+    background-size: 67%;
+  }
+
+  .sm\:bg-3\/4 {
+    background-size: 100%;
   }
 
   .sm\:border-collapse {
@@ -17112,70 +17259,169 @@ button:hover {
     position: sticky;
   }
 
-  .sm\:inset-0 {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  .sm\:inset-1\/4 {
+    top: 25%;
+    right: 25%;
+    bottom: 25%;
+    left: 25%;
   }
 
-  .sm\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .sm\:inset-1\/3 {
+    top: 33%;
+    right: 33%;
+    bottom: 33%;
+    left: 33%;
   }
 
-  .sm\:inset-y-0 {
-    top: 0;
-    bottom: 0;
+  .sm\:inset-1\/2 {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
   }
 
-  .sm\:inset-x-0 {
-    right: 0;
-    left: 0;
+  .sm\:inset-2\/3 {
+    top: 67%;
+    right: 67%;
+    bottom: 67%;
+    left: 67%;
   }
 
-  .sm\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .sm\:inset-3\/4 {
+    top: 100%;
+    right: 100%;
+    bottom: 100%;
+    left: 100%;
   }
 
-  .sm\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .sm\:inset-y-1\/4 {
+    top: 25%;
+    bottom: 25%;
   }
 
-  .sm\:top-0 {
-    top: 0;
+  .sm\:inset-x-1\/4 {
+    right: 25%;
+    left: 25%;
   }
 
-  .sm\:right-0 {
-    right: 0;
+  .sm\:inset-y-1\/3 {
+    top: 33%;
+    bottom: 33%;
   }
 
-  .sm\:bottom-0 {
-    bottom: 0;
+  .sm\:inset-x-1\/3 {
+    right: 33%;
+    left: 33%;
   }
 
-  .sm\:left-0 {
-    left: 0;
+  .sm\:inset-y-1\/2 {
+    top: 50%;
+    bottom: 50%;
   }
 
-  .sm\:top-auto {
-    top: auto;
+  .sm\:inset-x-1\/2 {
+    right: 50%;
+    left: 50%;
   }
 
-  .sm\:right-auto {
-    right: auto;
+  .sm\:inset-y-2\/3 {
+    top: 67%;
+    bottom: 67%;
   }
 
-  .sm\:bottom-auto {
-    bottom: auto;
+  .sm\:inset-x-2\/3 {
+    right: 67%;
+    left: 67%;
   }
 
-  .sm\:left-auto {
-    left: auto;
+  .sm\:inset-y-3\/4 {
+    top: 100%;
+    bottom: 100%;
+  }
+
+  .sm\:inset-x-3\/4 {
+    right: 100%;
+    left: 100%;
+  }
+
+  .sm\:top-1\/4 {
+    top: 25%;
+  }
+
+  .sm\:right-1\/4 {
+    right: 25%;
+  }
+
+  .sm\:bottom-1\/4 {
+    bottom: 25%;
+  }
+
+  .sm\:left-1\/4 {
+    left: 25%;
+  }
+
+  .sm\:top-1\/3 {
+    top: 33%;
+  }
+
+  .sm\:right-1\/3 {
+    right: 33%;
+  }
+
+  .sm\:bottom-1\/3 {
+    bottom: 33%;
+  }
+
+  .sm\:left-1\/3 {
+    left: 33%;
+  }
+
+  .sm\:top-1\/2 {
+    top: 50%;
+  }
+
+  .sm\:right-1\/2 {
+    right: 50%;
+  }
+
+  .sm\:bottom-1\/2 {
+    bottom: 50%;
+  }
+
+  .sm\:left-1\/2 {
+    left: 50%;
+  }
+
+  .sm\:top-2\/3 {
+    top: 67%;
+  }
+
+  .sm\:right-2\/3 {
+    right: 67%;
+  }
+
+  .sm\:bottom-2\/3 {
+    bottom: 67%;
+  }
+
+  .sm\:left-2\/3 {
+    left: 67%;
+  }
+
+  .sm\:top-3\/4 {
+    top: 100%;
+  }
+
+  .sm\:right-3\/4 {
+    right: 100%;
+  }
+
+  .sm\:bottom-3\/4 {
+    bottom: 100%;
+  }
+
+  .sm\:left-3\/4 {
+    left: 100%;
   }
 
   .sm\:resize-none {
@@ -22499,6 +22745,10 @@ button:hover {
     background-position: bottom;
   }
 
+  .md\:bg-bottom-4 {
+    background-position: center bottom 1rem;
+  }
+
   .md\:bg-center {
     background-position: center;
   }
@@ -22531,6 +22781,14 @@ button:hover {
     background-position: top;
   }
 
+  .md\:bg-top-2 {
+    background-position: center top 2rem;
+  }
+
+  .md\:bg-bg-lg {
+    background-position: 55vw 5rem;
+  }
+
   .md\:bg-repeat {
     background-repeat: repeat;
   }
@@ -22555,16 +22813,24 @@ button:hover {
     background-repeat: space;
   }
 
-  .md\:bg-auto {
-    background-size: auto;
+  .md\:bg-1\/4 {
+    background-size: 25%;
   }
 
-  .md\:bg-cover {
-    background-size: cover;
+  .md\:bg-1\/3 {
+    background-size: 33%;
   }
 
-  .md\:bg-contain {
-    background-size: contain;
+  .md\:bg-1\/2 {
+    background-size: 50%;
+  }
+
+  .md\:bg-2\/3 {
+    background-size: 67%;
+  }
+
+  .md\:bg-3\/4 {
+    background-size: 100%;
   }
 
   .md\:border-collapse {
@@ -27420,70 +27686,169 @@ button:hover {
     position: sticky;
   }
 
-  .md\:inset-0 {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  .md\:inset-1\/4 {
+    top: 25%;
+    right: 25%;
+    bottom: 25%;
+    left: 25%;
   }
 
-  .md\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .md\:inset-1\/3 {
+    top: 33%;
+    right: 33%;
+    bottom: 33%;
+    left: 33%;
   }
 
-  .md\:inset-y-0 {
-    top: 0;
-    bottom: 0;
+  .md\:inset-1\/2 {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
   }
 
-  .md\:inset-x-0 {
-    right: 0;
-    left: 0;
+  .md\:inset-2\/3 {
+    top: 67%;
+    right: 67%;
+    bottom: 67%;
+    left: 67%;
   }
 
-  .md\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .md\:inset-3\/4 {
+    top: 100%;
+    right: 100%;
+    bottom: 100%;
+    left: 100%;
   }
 
-  .md\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .md\:inset-y-1\/4 {
+    top: 25%;
+    bottom: 25%;
   }
 
-  .md\:top-0 {
-    top: 0;
+  .md\:inset-x-1\/4 {
+    right: 25%;
+    left: 25%;
   }
 
-  .md\:right-0 {
-    right: 0;
+  .md\:inset-y-1\/3 {
+    top: 33%;
+    bottom: 33%;
   }
 
-  .md\:bottom-0 {
-    bottom: 0;
+  .md\:inset-x-1\/3 {
+    right: 33%;
+    left: 33%;
   }
 
-  .md\:left-0 {
-    left: 0;
+  .md\:inset-y-1\/2 {
+    top: 50%;
+    bottom: 50%;
   }
 
-  .md\:top-auto {
-    top: auto;
+  .md\:inset-x-1\/2 {
+    right: 50%;
+    left: 50%;
   }
 
-  .md\:right-auto {
-    right: auto;
+  .md\:inset-y-2\/3 {
+    top: 67%;
+    bottom: 67%;
   }
 
-  .md\:bottom-auto {
-    bottom: auto;
+  .md\:inset-x-2\/3 {
+    right: 67%;
+    left: 67%;
   }
 
-  .md\:left-auto {
-    left: auto;
+  .md\:inset-y-3\/4 {
+    top: 100%;
+    bottom: 100%;
+  }
+
+  .md\:inset-x-3\/4 {
+    right: 100%;
+    left: 100%;
+  }
+
+  .md\:top-1\/4 {
+    top: 25%;
+  }
+
+  .md\:right-1\/4 {
+    right: 25%;
+  }
+
+  .md\:bottom-1\/4 {
+    bottom: 25%;
+  }
+
+  .md\:left-1\/4 {
+    left: 25%;
+  }
+
+  .md\:top-1\/3 {
+    top: 33%;
+  }
+
+  .md\:right-1\/3 {
+    right: 33%;
+  }
+
+  .md\:bottom-1\/3 {
+    bottom: 33%;
+  }
+
+  .md\:left-1\/3 {
+    left: 33%;
+  }
+
+  .md\:top-1\/2 {
+    top: 50%;
+  }
+
+  .md\:right-1\/2 {
+    right: 50%;
+  }
+
+  .md\:bottom-1\/2 {
+    bottom: 50%;
+  }
+
+  .md\:left-1\/2 {
+    left: 50%;
+  }
+
+  .md\:top-2\/3 {
+    top: 67%;
+  }
+
+  .md\:right-2\/3 {
+    right: 67%;
+  }
+
+  .md\:bottom-2\/3 {
+    bottom: 67%;
+  }
+
+  .md\:left-2\/3 {
+    left: 67%;
+  }
+
+  .md\:top-3\/4 {
+    top: 100%;
+  }
+
+  .md\:right-3\/4 {
+    right: 100%;
+  }
+
+  .md\:bottom-3\/4 {
+    bottom: 100%;
+  }
+
+  .md\:left-3\/4 {
+    left: 100%;
   }
 
   .md\:resize-none {
@@ -32807,6 +33172,10 @@ button:hover {
     background-position: bottom;
   }
 
+  .lg\:bg-bottom-4 {
+    background-position: center bottom 1rem;
+  }
+
   .lg\:bg-center {
     background-position: center;
   }
@@ -32839,6 +33208,14 @@ button:hover {
     background-position: top;
   }
 
+  .lg\:bg-top-2 {
+    background-position: center top 2rem;
+  }
+
+  .lg\:bg-bg-lg {
+    background-position: 55vw 5rem;
+  }
+
   .lg\:bg-repeat {
     background-repeat: repeat;
   }
@@ -32863,16 +33240,24 @@ button:hover {
     background-repeat: space;
   }
 
-  .lg\:bg-auto {
-    background-size: auto;
+  .lg\:bg-1\/4 {
+    background-size: 25%;
   }
 
-  .lg\:bg-cover {
-    background-size: cover;
+  .lg\:bg-1\/3 {
+    background-size: 33%;
   }
 
-  .lg\:bg-contain {
-    background-size: contain;
+  .lg\:bg-1\/2 {
+    background-size: 50%;
+  }
+
+  .lg\:bg-2\/3 {
+    background-size: 67%;
+  }
+
+  .lg\:bg-3\/4 {
+    background-size: 100%;
   }
 
   .lg\:border-collapse {
@@ -37728,70 +38113,169 @@ button:hover {
     position: sticky;
   }
 
-  .lg\:inset-0 {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  .lg\:inset-1\/4 {
+    top: 25%;
+    right: 25%;
+    bottom: 25%;
+    left: 25%;
   }
 
-  .lg\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .lg\:inset-1\/3 {
+    top: 33%;
+    right: 33%;
+    bottom: 33%;
+    left: 33%;
   }
 
-  .lg\:inset-y-0 {
-    top: 0;
-    bottom: 0;
+  .lg\:inset-1\/2 {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
   }
 
-  .lg\:inset-x-0 {
-    right: 0;
-    left: 0;
+  .lg\:inset-2\/3 {
+    top: 67%;
+    right: 67%;
+    bottom: 67%;
+    left: 67%;
   }
 
-  .lg\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .lg\:inset-3\/4 {
+    top: 100%;
+    right: 100%;
+    bottom: 100%;
+    left: 100%;
   }
 
-  .lg\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .lg\:inset-y-1\/4 {
+    top: 25%;
+    bottom: 25%;
   }
 
-  .lg\:top-0 {
-    top: 0;
+  .lg\:inset-x-1\/4 {
+    right: 25%;
+    left: 25%;
   }
 
-  .lg\:right-0 {
-    right: 0;
+  .lg\:inset-y-1\/3 {
+    top: 33%;
+    bottom: 33%;
   }
 
-  .lg\:bottom-0 {
-    bottom: 0;
+  .lg\:inset-x-1\/3 {
+    right: 33%;
+    left: 33%;
   }
 
-  .lg\:left-0 {
-    left: 0;
+  .lg\:inset-y-1\/2 {
+    top: 50%;
+    bottom: 50%;
   }
 
-  .lg\:top-auto {
-    top: auto;
+  .lg\:inset-x-1\/2 {
+    right: 50%;
+    left: 50%;
   }
 
-  .lg\:right-auto {
-    right: auto;
+  .lg\:inset-y-2\/3 {
+    top: 67%;
+    bottom: 67%;
   }
 
-  .lg\:bottom-auto {
-    bottom: auto;
+  .lg\:inset-x-2\/3 {
+    right: 67%;
+    left: 67%;
   }
 
-  .lg\:left-auto {
-    left: auto;
+  .lg\:inset-y-3\/4 {
+    top: 100%;
+    bottom: 100%;
+  }
+
+  .lg\:inset-x-3\/4 {
+    right: 100%;
+    left: 100%;
+  }
+
+  .lg\:top-1\/4 {
+    top: 25%;
+  }
+
+  .lg\:right-1\/4 {
+    right: 25%;
+  }
+
+  .lg\:bottom-1\/4 {
+    bottom: 25%;
+  }
+
+  .lg\:left-1\/4 {
+    left: 25%;
+  }
+
+  .lg\:top-1\/3 {
+    top: 33%;
+  }
+
+  .lg\:right-1\/3 {
+    right: 33%;
+  }
+
+  .lg\:bottom-1\/3 {
+    bottom: 33%;
+  }
+
+  .lg\:left-1\/3 {
+    left: 33%;
+  }
+
+  .lg\:top-1\/2 {
+    top: 50%;
+  }
+
+  .lg\:right-1\/2 {
+    right: 50%;
+  }
+
+  .lg\:bottom-1\/2 {
+    bottom: 50%;
+  }
+
+  .lg\:left-1\/2 {
+    left: 50%;
+  }
+
+  .lg\:top-2\/3 {
+    top: 67%;
+  }
+
+  .lg\:right-2\/3 {
+    right: 67%;
+  }
+
+  .lg\:bottom-2\/3 {
+    bottom: 67%;
+  }
+
+  .lg\:left-2\/3 {
+    left: 67%;
+  }
+
+  .lg\:top-3\/4 {
+    top: 100%;
+  }
+
+  .lg\:right-3\/4 {
+    right: 100%;
+  }
+
+  .lg\:bottom-3\/4 {
+    bottom: 100%;
+  }
+
+  .lg\:left-3\/4 {
+    left: 100%;
   }
 
   .lg\:resize-none {
@@ -43115,6 +43599,10 @@ button:hover {
     background-position: bottom;
   }
 
+  .xl\:bg-bottom-4 {
+    background-position: center bottom 1rem;
+  }
+
   .xl\:bg-center {
     background-position: center;
   }
@@ -43147,6 +43635,14 @@ button:hover {
     background-position: top;
   }
 
+  .xl\:bg-top-2 {
+    background-position: center top 2rem;
+  }
+
+  .xl\:bg-bg-lg {
+    background-position: 55vw 5rem;
+  }
+
   .xl\:bg-repeat {
     background-repeat: repeat;
   }
@@ -43171,16 +43667,24 @@ button:hover {
     background-repeat: space;
   }
 
-  .xl\:bg-auto {
-    background-size: auto;
+  .xl\:bg-1\/4 {
+    background-size: 25%;
   }
 
-  .xl\:bg-cover {
-    background-size: cover;
+  .xl\:bg-1\/3 {
+    background-size: 33%;
   }
 
-  .xl\:bg-contain {
-    background-size: contain;
+  .xl\:bg-1\/2 {
+    background-size: 50%;
+  }
+
+  .xl\:bg-2\/3 {
+    background-size: 67%;
+  }
+
+  .xl\:bg-3\/4 {
+    background-size: 100%;
   }
 
   .xl\:border-collapse {
@@ -48036,70 +48540,169 @@ button:hover {
     position: sticky;
   }
 
-  .xl\:inset-0 {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  .xl\:inset-1\/4 {
+    top: 25%;
+    right: 25%;
+    bottom: 25%;
+    left: 25%;
   }
 
-  .xl\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .xl\:inset-1\/3 {
+    top: 33%;
+    right: 33%;
+    bottom: 33%;
+    left: 33%;
   }
 
-  .xl\:inset-y-0 {
-    top: 0;
-    bottom: 0;
+  .xl\:inset-1\/2 {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
   }
 
-  .xl\:inset-x-0 {
-    right: 0;
-    left: 0;
+  .xl\:inset-2\/3 {
+    top: 67%;
+    right: 67%;
+    bottom: 67%;
+    left: 67%;
   }
 
-  .xl\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .xl\:inset-3\/4 {
+    top: 100%;
+    right: 100%;
+    bottom: 100%;
+    left: 100%;
   }
 
-  .xl\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .xl\:inset-y-1\/4 {
+    top: 25%;
+    bottom: 25%;
   }
 
-  .xl\:top-0 {
-    top: 0;
+  .xl\:inset-x-1\/4 {
+    right: 25%;
+    left: 25%;
   }
 
-  .xl\:right-0 {
-    right: 0;
+  .xl\:inset-y-1\/3 {
+    top: 33%;
+    bottom: 33%;
   }
 
-  .xl\:bottom-0 {
-    bottom: 0;
+  .xl\:inset-x-1\/3 {
+    right: 33%;
+    left: 33%;
   }
 
-  .xl\:left-0 {
-    left: 0;
+  .xl\:inset-y-1\/2 {
+    top: 50%;
+    bottom: 50%;
   }
 
-  .xl\:top-auto {
-    top: auto;
+  .xl\:inset-x-1\/2 {
+    right: 50%;
+    left: 50%;
   }
 
-  .xl\:right-auto {
-    right: auto;
+  .xl\:inset-y-2\/3 {
+    top: 67%;
+    bottom: 67%;
   }
 
-  .xl\:bottom-auto {
-    bottom: auto;
+  .xl\:inset-x-2\/3 {
+    right: 67%;
+    left: 67%;
   }
 
-  .xl\:left-auto {
-    left: auto;
+  .xl\:inset-y-3\/4 {
+    top: 100%;
+    bottom: 100%;
+  }
+
+  .xl\:inset-x-3\/4 {
+    right: 100%;
+    left: 100%;
+  }
+
+  .xl\:top-1\/4 {
+    top: 25%;
+  }
+
+  .xl\:right-1\/4 {
+    right: 25%;
+  }
+
+  .xl\:bottom-1\/4 {
+    bottom: 25%;
+  }
+
+  .xl\:left-1\/4 {
+    left: 25%;
+  }
+
+  .xl\:top-1\/3 {
+    top: 33%;
+  }
+
+  .xl\:right-1\/3 {
+    right: 33%;
+  }
+
+  .xl\:bottom-1\/3 {
+    bottom: 33%;
+  }
+
+  .xl\:left-1\/3 {
+    left: 33%;
+  }
+
+  .xl\:top-1\/2 {
+    top: 50%;
+  }
+
+  .xl\:right-1\/2 {
+    right: 50%;
+  }
+
+  .xl\:bottom-1\/2 {
+    bottom: 50%;
+  }
+
+  .xl\:left-1\/2 {
+    left: 50%;
+  }
+
+  .xl\:top-2\/3 {
+    top: 67%;
+  }
+
+  .xl\:right-2\/3 {
+    right: 67%;
+  }
+
+  .xl\:bottom-2\/3 {
+    bottom: 67%;
+  }
+
+  .xl\:left-2\/3 {
+    left: 67%;
+  }
+
+  .xl\:top-3\/4 {
+    top: 100%;
+  }
+
+  .xl\:right-3\/4 {
+    right: 100%;
+  }
+
+  .xl\:bottom-3\/4 {
+    bottom: 100%;
+  }
+
+  .xl\:left-3\/4 {
+    left: 100%;
   }
 
   .xl\:resize-none {
