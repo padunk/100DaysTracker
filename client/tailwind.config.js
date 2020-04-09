@@ -10,6 +10,8 @@ module.exports = {
       }
     },
     inset: {
+      "0": "0",
+      "1/5": "20%",
       "1/4": "25%",
       "1/3": "33%",
       "1/2": "50%",
@@ -19,6 +21,10 @@ module.exports = {
       "2rem": "2rem",
       "4rem": "4rem",
       "6rem": "6rem",
+      "8rem": "8rem",
+      "10rem": "10rem",
+      "12rem": "12rem",
+      "16rem": "16rem",
     },
     backgroundPosition: {
       bottom: "bottom",
@@ -41,6 +47,6 @@ module.exports = {
       "1/2": "50%",
       "2/3": "67%",
       "3/4": "75%"
-    }
+    },
   }
 };

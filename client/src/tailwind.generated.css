@@ -6792,6 +6792,20 @@ button:hover {
   position: sticky;
 }
 
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.inset-1\/5 {
+  top: 20%;
+  right: 20%;
+  bottom: 20%;
+  left: 20%;
+}
+
 .inset-1\/4 {
   top: 25%;
   right: 25%;
@@ -6853,6 +6867,54 @@ button:hover {
   right: 6rem;
   bottom: 6rem;
   left: 6rem;
+}
+
+.inset-8rem {
+  top: 8rem;
+  right: 8rem;
+  bottom: 8rem;
+  left: 8rem;
+}
+
+.inset-10rem {
+  top: 10rem;
+  right: 10rem;
+  bottom: 10rem;
+  left: 10rem;
+}
+
+.inset-12rem {
+  top: 12rem;
+  right: 12rem;
+  bottom: 12rem;
+  left: 12rem;
+}
+
+.inset-16rem {
+  top: 16rem;
+  right: 16rem;
+  bottom: 16rem;
+  left: 16rem;
+}
+
+.inset-y-0 {
+  top: 0;
+  bottom: 0;
+}
+
+.inset-x-0 {
+  right: 0;
+  left: 0;
+}
+
+.inset-y-1\/5 {
+  top: 20%;
+  bottom: 20%;
+}
+
+.inset-x-1\/5 {
+  right: 20%;
+  left: 20%;
 }
 
 .inset-y-1\/4 {
@@ -6943,6 +7005,78 @@ button:hover {
 .inset-x-6rem {
   right: 6rem;
   left: 6rem;
+}
+
+.inset-y-8rem {
+  top: 8rem;
+  bottom: 8rem;
+}
+
+.inset-x-8rem {
+  right: 8rem;
+  left: 8rem;
+}
+
+.inset-y-10rem {
+  top: 10rem;
+  bottom: 10rem;
+}
+
+.inset-x-10rem {
+  right: 10rem;
+  left: 10rem;
+}
+
+.inset-y-12rem {
+  top: 12rem;
+  bottom: 12rem;
+}
+
+.inset-x-12rem {
+  right: 12rem;
+  left: 12rem;
+}
+
+.inset-y-16rem {
+  top: 16rem;
+  bottom: 16rem;
+}
+
+.inset-x-16rem {
+  right: 16rem;
+  left: 16rem;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.top-1\/5 {
+  top: 20%;
+}
+
+.right-1\/5 {
+  right: 20%;
+}
+
+.bottom-1\/5 {
+  bottom: 20%;
+}
+
+.left-1\/5 {
+  left: 20%;
 }
 
 .top-1\/4 {
@@ -7087,6 +7221,70 @@ button:hover {
 
 .left-6rem {
   left: 6rem;
+}
+
+.top-8rem {
+  top: 8rem;
+}
+
+.right-8rem {
+  right: 8rem;
+}
+
+.bottom-8rem {
+  bottom: 8rem;
+}
+
+.left-8rem {
+  left: 8rem;
+}
+
+.top-10rem {
+  top: 10rem;
+}
+
+.right-10rem {
+  right: 10rem;
+}
+
+.bottom-10rem {
+  bottom: 10rem;
+}
+
+.left-10rem {
+  left: 10rem;
+}
+
+.top-12rem {
+  top: 12rem;
+}
+
+.right-12rem {
+  right: 12rem;
+}
+
+.bottom-12rem {
+  bottom: 12rem;
+}
+
+.left-12rem {
+  left: 12rem;
+}
+
+.top-16rem {
+  top: 16rem;
+}
+
+.right-16rem {
+  right: 16rem;
+}
+
+.bottom-16rem {
+  bottom: 16rem;
+}
+
+.left-16rem {
+  left: 16rem;
 }
 
 .resize-none {
@@ -11240,24 +11438,20 @@ button:hover {
   opacity: 1;
 }
 
-.b-t-red {
-  border-top-color: #c53030;
+.b-top-pink-500 {
+  border-top-color: #ed64a6;
 }
 
-.b-r-blue {
-  border-right-color: #3182ce;
+.b-r-white {
+  border-right-color: #fff;
 }
 
-.b-b-green {
-  border-bottom-color: #48bb78;
+.b-bottom-pink-500 {
+  border-bottom-color: #ed64a6;
 }
 
-.b-l-yellow {
-  border-left-color: #ecc94b;
-}
-
-.test {
-  color: red;
+.b-l-white {
+  border-left-color: #fff;
 }
 
 @media (min-width: 640px) {
@@ -17390,6 +17584,20 @@ button:hover {
     position: sticky;
   }
 
+  .sm\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .sm\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .sm\:inset-1\/4 {
     top: 25%;
     right: 25%;
@@ -17451,6 +17659,54 @@ button:hover {
     right: 6rem;
     bottom: 6rem;
     left: 6rem;
+  }
+
+  .sm\:inset-8rem {
+    top: 8rem;
+    right: 8rem;
+    bottom: 8rem;
+    left: 8rem;
+  }
+
+  .sm\:inset-10rem {
+    top: 10rem;
+    right: 10rem;
+    bottom: 10rem;
+    left: 10rem;
+  }
+
+  .sm\:inset-12rem {
+    top: 12rem;
+    right: 12rem;
+    bottom: 12rem;
+    left: 12rem;
+  }
+
+  .sm\:inset-16rem {
+    top: 16rem;
+    right: 16rem;
+    bottom: 16rem;
+    left: 16rem;
+  }
+
+  .sm\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .sm\:inset-x-0 {
+    right: 0;
+    left: 0;
+  }
+
+  .sm\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .sm\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
   }
 
   .sm\:inset-y-1\/4 {
@@ -17541,6 +17797,78 @@ button:hover {
   .sm\:inset-x-6rem {
     right: 6rem;
     left: 6rem;
+  }
+
+  .sm\:inset-y-8rem {
+    top: 8rem;
+    bottom: 8rem;
+  }
+
+  .sm\:inset-x-8rem {
+    right: 8rem;
+    left: 8rem;
+  }
+
+  .sm\:inset-y-10rem {
+    top: 10rem;
+    bottom: 10rem;
+  }
+
+  .sm\:inset-x-10rem {
+    right: 10rem;
+    left: 10rem;
+  }
+
+  .sm\:inset-y-12rem {
+    top: 12rem;
+    bottom: 12rem;
+  }
+
+  .sm\:inset-x-12rem {
+    right: 12rem;
+    left: 12rem;
+  }
+
+  .sm\:inset-y-16rem {
+    top: 16rem;
+    bottom: 16rem;
+  }
+
+  .sm\:inset-x-16rem {
+    right: 16rem;
+    left: 16rem;
+  }
+
+  .sm\:top-0 {
+    top: 0;
+  }
+
+  .sm\:right-0 {
+    right: 0;
+  }
+
+  .sm\:bottom-0 {
+    bottom: 0;
+  }
+
+  .sm\:left-0 {
+    left: 0;
+  }
+
+  .sm\:top-1\/5 {
+    top: 20%;
+  }
+
+  .sm\:right-1\/5 {
+    right: 20%;
+  }
+
+  .sm\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .sm\:left-1\/5 {
+    left: 20%;
   }
 
   .sm\:top-1\/4 {
@@ -17685,6 +18013,70 @@ button:hover {
 
   .sm\:left-6rem {
     left: 6rem;
+  }
+
+  .sm\:top-8rem {
+    top: 8rem;
+  }
+
+  .sm\:right-8rem {
+    right: 8rem;
+  }
+
+  .sm\:bottom-8rem {
+    bottom: 8rem;
+  }
+
+  .sm\:left-8rem {
+    left: 8rem;
+  }
+
+  .sm\:top-10rem {
+    top: 10rem;
+  }
+
+  .sm\:right-10rem {
+    right: 10rem;
+  }
+
+  .sm\:bottom-10rem {
+    bottom: 10rem;
+  }
+
+  .sm\:left-10rem {
+    left: 10rem;
+  }
+
+  .sm\:top-12rem {
+    top: 12rem;
+  }
+
+  .sm\:right-12rem {
+    right: 12rem;
+  }
+
+  .sm\:bottom-12rem {
+    bottom: 12rem;
+  }
+
+  .sm\:left-12rem {
+    left: 12rem;
+  }
+
+  .sm\:top-16rem {
+    top: 16rem;
+  }
+
+  .sm\:right-16rem {
+    right: 16rem;
+  }
+
+  .sm\:bottom-16rem {
+    bottom: 16rem;
+  }
+
+  .sm\:left-16rem {
+    left: 16rem;
   }
 
   .sm\:resize-none {
@@ -27953,6 +28345,20 @@ button:hover {
     position: sticky;
   }
 
+  .md\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .md\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .md\:inset-1\/4 {
     top: 25%;
     right: 25%;
@@ -28014,6 +28420,54 @@ button:hover {
     right: 6rem;
     bottom: 6rem;
     left: 6rem;
+  }
+
+  .md\:inset-8rem {
+    top: 8rem;
+    right: 8rem;
+    bottom: 8rem;
+    left: 8rem;
+  }
+
+  .md\:inset-10rem {
+    top: 10rem;
+    right: 10rem;
+    bottom: 10rem;
+    left: 10rem;
+  }
+
+  .md\:inset-12rem {
+    top: 12rem;
+    right: 12rem;
+    bottom: 12rem;
+    left: 12rem;
+  }
+
+  .md\:inset-16rem {
+    top: 16rem;
+    right: 16rem;
+    bottom: 16rem;
+    left: 16rem;
+  }
+
+  .md\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .md\:inset-x-0 {
+    right: 0;
+    left: 0;
+  }
+
+  .md\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .md\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
   }
 
   .md\:inset-y-1\/4 {
@@ -28104,6 +28558,78 @@ button:hover {
   .md\:inset-x-6rem {
     right: 6rem;
     left: 6rem;
+  }
+
+  .md\:inset-y-8rem {
+    top: 8rem;
+    bottom: 8rem;
+  }
+
+  .md\:inset-x-8rem {
+    right: 8rem;
+    left: 8rem;
+  }
+
+  .md\:inset-y-10rem {
+    top: 10rem;
+    bottom: 10rem;
+  }
+
+  .md\:inset-x-10rem {
+    right: 10rem;
+    left: 10rem;
+  }
+
+  .md\:inset-y-12rem {
+    top: 12rem;
+    bottom: 12rem;
+  }
+
+  .md\:inset-x-12rem {
+    right: 12rem;
+    left: 12rem;
+  }
+
+  .md\:inset-y-16rem {
+    top: 16rem;
+    bottom: 16rem;
+  }
+
+  .md\:inset-x-16rem {
+    right: 16rem;
+    left: 16rem;
+  }
+
+  .md\:top-0 {
+    top: 0;
+  }
+
+  .md\:right-0 {
+    right: 0;
+  }
+
+  .md\:bottom-0 {
+    bottom: 0;
+  }
+
+  .md\:left-0 {
+    left: 0;
+  }
+
+  .md\:top-1\/5 {
+    top: 20%;
+  }
+
+  .md\:right-1\/5 {
+    right: 20%;
+  }
+
+  .md\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .md\:left-1\/5 {
+    left: 20%;
   }
 
   .md\:top-1\/4 {
@@ -28248,6 +28774,70 @@ button:hover {
 
   .md\:left-6rem {
     left: 6rem;
+  }
+
+  .md\:top-8rem {
+    top: 8rem;
+  }
+
+  .md\:right-8rem {
+    right: 8rem;
+  }
+
+  .md\:bottom-8rem {
+    bottom: 8rem;
+  }
+
+  .md\:left-8rem {
+    left: 8rem;
+  }
+
+  .md\:top-10rem {
+    top: 10rem;
+  }
+
+  .md\:right-10rem {
+    right: 10rem;
+  }
+
+  .md\:bottom-10rem {
+    bottom: 10rem;
+  }
+
+  .md\:left-10rem {
+    left: 10rem;
+  }
+
+  .md\:top-12rem {
+    top: 12rem;
+  }
+
+  .md\:right-12rem {
+    right: 12rem;
+  }
+
+  .md\:bottom-12rem {
+    bottom: 12rem;
+  }
+
+  .md\:left-12rem {
+    left: 12rem;
+  }
+
+  .md\:top-16rem {
+    top: 16rem;
+  }
+
+  .md\:right-16rem {
+    right: 16rem;
+  }
+
+  .md\:bottom-16rem {
+    bottom: 16rem;
+  }
+
+  .md\:left-16rem {
+    left: 16rem;
   }
 
   .md\:resize-none {
@@ -38516,6 +39106,20 @@ button:hover {
     position: sticky;
   }
 
+  .lg\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .lg\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .lg\:inset-1\/4 {
     top: 25%;
     right: 25%;
@@ -38577,6 +39181,54 @@ button:hover {
     right: 6rem;
     bottom: 6rem;
     left: 6rem;
+  }
+
+  .lg\:inset-8rem {
+    top: 8rem;
+    right: 8rem;
+    bottom: 8rem;
+    left: 8rem;
+  }
+
+  .lg\:inset-10rem {
+    top: 10rem;
+    right: 10rem;
+    bottom: 10rem;
+    left: 10rem;
+  }
+
+  .lg\:inset-12rem {
+    top: 12rem;
+    right: 12rem;
+    bottom: 12rem;
+    left: 12rem;
+  }
+
+  .lg\:inset-16rem {
+    top: 16rem;
+    right: 16rem;
+    bottom: 16rem;
+    left: 16rem;
+  }
+
+  .lg\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .lg\:inset-x-0 {
+    right: 0;
+    left: 0;
+  }
+
+  .lg\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .lg\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
   }
 
   .lg\:inset-y-1\/4 {
@@ -38667,6 +39319,78 @@ button:hover {
   .lg\:inset-x-6rem {
     right: 6rem;
     left: 6rem;
+  }
+
+  .lg\:inset-y-8rem {
+    top: 8rem;
+    bottom: 8rem;
+  }
+
+  .lg\:inset-x-8rem {
+    right: 8rem;
+    left: 8rem;
+  }
+
+  .lg\:inset-y-10rem {
+    top: 10rem;
+    bottom: 10rem;
+  }
+
+  .lg\:inset-x-10rem {
+    right: 10rem;
+    left: 10rem;
+  }
+
+  .lg\:inset-y-12rem {
+    top: 12rem;
+    bottom: 12rem;
+  }
+
+  .lg\:inset-x-12rem {
+    right: 12rem;
+    left: 12rem;
+  }
+
+  .lg\:inset-y-16rem {
+    top: 16rem;
+    bottom: 16rem;
+  }
+
+  .lg\:inset-x-16rem {
+    right: 16rem;
+    left: 16rem;
+  }
+
+  .lg\:top-0 {
+    top: 0;
+  }
+
+  .lg\:right-0 {
+    right: 0;
+  }
+
+  .lg\:bottom-0 {
+    bottom: 0;
+  }
+
+  .lg\:left-0 {
+    left: 0;
+  }
+
+  .lg\:top-1\/5 {
+    top: 20%;
+  }
+
+  .lg\:right-1\/5 {
+    right: 20%;
+  }
+
+  .lg\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .lg\:left-1\/5 {
+    left: 20%;
   }
 
   .lg\:top-1\/4 {
@@ -38811,6 +39535,70 @@ button:hover {
 
   .lg\:left-6rem {
     left: 6rem;
+  }
+
+  .lg\:top-8rem {
+    top: 8rem;
+  }
+
+  .lg\:right-8rem {
+    right: 8rem;
+  }
+
+  .lg\:bottom-8rem {
+    bottom: 8rem;
+  }
+
+  .lg\:left-8rem {
+    left: 8rem;
+  }
+
+  .lg\:top-10rem {
+    top: 10rem;
+  }
+
+  .lg\:right-10rem {
+    right: 10rem;
+  }
+
+  .lg\:bottom-10rem {
+    bottom: 10rem;
+  }
+
+  .lg\:left-10rem {
+    left: 10rem;
+  }
+
+  .lg\:top-12rem {
+    top: 12rem;
+  }
+
+  .lg\:right-12rem {
+    right: 12rem;
+  }
+
+  .lg\:bottom-12rem {
+    bottom: 12rem;
+  }
+
+  .lg\:left-12rem {
+    left: 12rem;
+  }
+
+  .lg\:top-16rem {
+    top: 16rem;
+  }
+
+  .lg\:right-16rem {
+    right: 16rem;
+  }
+
+  .lg\:bottom-16rem {
+    bottom: 16rem;
+  }
+
+  .lg\:left-16rem {
+    left: 16rem;
   }
 
   .lg\:resize-none {
@@ -49079,6 +49867,20 @@ button:hover {
     position: sticky;
   }
 
+  .xl\:inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .xl\:inset-1\/5 {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+  }
+
   .xl\:inset-1\/4 {
     top: 25%;
     right: 25%;
@@ -49140,6 +49942,54 @@ button:hover {
     right: 6rem;
     bottom: 6rem;
     left: 6rem;
+  }
+
+  .xl\:inset-8rem {
+    top: 8rem;
+    right: 8rem;
+    bottom: 8rem;
+    left: 8rem;
+  }
+
+  .xl\:inset-10rem {
+    top: 10rem;
+    right: 10rem;
+    bottom: 10rem;
+    left: 10rem;
+  }
+
+  .xl\:inset-12rem {
+    top: 12rem;
+    right: 12rem;
+    bottom: 12rem;
+    left: 12rem;
+  }
+
+  .xl\:inset-16rem {
+    top: 16rem;
+    right: 16rem;
+    bottom: 16rem;
+    left: 16rem;
+  }
+
+  .xl\:inset-y-0 {
+    top: 0;
+    bottom: 0;
+  }
+
+  .xl\:inset-x-0 {
+    right: 0;
+    left: 0;
+  }
+
+  .xl\:inset-y-1\/5 {
+    top: 20%;
+    bottom: 20%;
+  }
+
+  .xl\:inset-x-1\/5 {
+    right: 20%;
+    left: 20%;
   }
 
   .xl\:inset-y-1\/4 {
@@ -49230,6 +50080,78 @@ button:hover {
   .xl\:inset-x-6rem {
     right: 6rem;
     left: 6rem;
+  }
+
+  .xl\:inset-y-8rem {
+    top: 8rem;
+    bottom: 8rem;
+  }
+
+  .xl\:inset-x-8rem {
+    right: 8rem;
+    left: 8rem;
+  }
+
+  .xl\:inset-y-10rem {
+    top: 10rem;
+    bottom: 10rem;
+  }
+
+  .xl\:inset-x-10rem {
+    right: 10rem;
+    left: 10rem;
+  }
+
+  .xl\:inset-y-12rem {
+    top: 12rem;
+    bottom: 12rem;
+  }
+
+  .xl\:inset-x-12rem {
+    right: 12rem;
+    left: 12rem;
+  }
+
+  .xl\:inset-y-16rem {
+    top: 16rem;
+    bottom: 16rem;
+  }
+
+  .xl\:inset-x-16rem {
+    right: 16rem;
+    left: 16rem;
+  }
+
+  .xl\:top-0 {
+    top: 0;
+  }
+
+  .xl\:right-0 {
+    right: 0;
+  }
+
+  .xl\:bottom-0 {
+    bottom: 0;
+  }
+
+  .xl\:left-0 {
+    left: 0;
+  }
+
+  .xl\:top-1\/5 {
+    top: 20%;
+  }
+
+  .xl\:right-1\/5 {
+    right: 20%;
+  }
+
+  .xl\:bottom-1\/5 {
+    bottom: 20%;
+  }
+
+  .xl\:left-1\/5 {
+    left: 20%;
   }
 
   .xl\:top-1\/4 {
@@ -49374,6 +50296,70 @@ button:hover {
 
   .xl\:left-6rem {
     left: 6rem;
+  }
+
+  .xl\:top-8rem {
+    top: 8rem;
+  }
+
+  .xl\:right-8rem {
+    right: 8rem;
+  }
+
+  .xl\:bottom-8rem {
+    bottom: 8rem;
+  }
+
+  .xl\:left-8rem {
+    left: 8rem;
+  }
+
+  .xl\:top-10rem {
+    top: 10rem;
+  }
+
+  .xl\:right-10rem {
+    right: 10rem;
+  }
+
+  .xl\:bottom-10rem {
+    bottom: 10rem;
+  }
+
+  .xl\:left-10rem {
+    left: 10rem;
+  }
+
+  .xl\:top-12rem {
+    top: 12rem;
+  }
+
+  .xl\:right-12rem {
+    right: 12rem;
+  }
+
+  .xl\:bottom-12rem {
+    bottom: 12rem;
+  }
+
+  .xl\:left-12rem {
+    left: 12rem;
+  }
+
+  .xl\:top-16rem {
+    top: 16rem;
+  }
+
+  .xl\:right-16rem {
+    right: 16rem;
+  }
+
+  .xl\:bottom-16rem {
+    bottom: 16rem;
+  }
+
+  .xl\:left-16rem {
+    left: 16rem;
   }
 
   .xl\:resize-none {
