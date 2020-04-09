@@ -7,7 +7,6 @@ import AddDetail from "../AddDetail/AddDetail";
 import { BASE_URL } from "../../base/baseURL";
 import SubTitle from "../SubTitle/SubTitle";
 import Loading from "../../Loading/Loading";
-import Wrapper from "../Wrapper/Wrapper";
 import bgImage from "../../icons/svg/undraw_programming.svg";
 
 interface Props {
