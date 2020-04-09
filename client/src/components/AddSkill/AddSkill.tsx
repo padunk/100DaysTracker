@@ -24,7 +24,7 @@ const AddSkill = (props: Props) => {
             />
             <Button
                 type='submit'
-                customClass='bg-gray-400 rounded-br-full rounded-tr-full border-l-2 border-gray-500 px-4'>
+                customClass='bg-gray-400 rounded-br-full rounded-tr-full border-l-2 border-gray-500 px-2'>
                 Add
             </Button>
         </form>

@@ -8,9 +8,9 @@ import Metered from "../Metered/Metered";
 import SubTitle from "../SubTitle/SubTitle";
 import Loading from "../../Loading/Loading";
 import Wrapper from "../Wrapper/Wrapper";
-import bgImage from "../../icons/svg/undraw_dev_focus.svg";
-import { ReactComponent as BgImage } from "../../icons/svg/undraw_dev_focus.svg";
+import SvgUndrawDevFocus from "../../icons/SvgUndrawDevFocus";
 import SvgAdd from "../../icons/Add";
+import FixedAddLink from "../FixedAddLink/FixedAddLink";
 
 interface Props {}
 
@@ -90,6 +90,7 @@ const Home = (props: Props) => {
       <Wrapper customClass="container mx-auto">
         <Gap className="h-16" />
         <Loading />
+        <Gap className="h-4" />
       </Wrapper>
     );
   } else {
@@ -97,14 +98,11 @@ const Home = (props: Props) => {
       <Fragment>
         <Gap className="h-5" />
         <SubTitle subtitle="My Journey to Awesomeness!" emoji="⭐️" />
-        <div>
-          <div className="md:pt-8 md:w-1/3 md:absolute md:left-2rem lg:left-4rem">
-            <img
-              src={`${bgImage}`}
-              alt="web developer"
-              className="w-3/4 mx-auto md:hidden"
-            />
-            <ul className="px-2 w-md mx-auto sm:px-6 lg:w-lg">
+        <div className="flex justify-around items-center">
+          <div className="md:pt-8">
+            <SvgUndrawDevFocus className="w-3/4 h-48 mx-auto md:hidden" />
+            <Gap className="h-2" />
+            <ul className="px-2 max-w-md mx-auto sm:px-6">
               {challengeList.map((challenge, idx) => {
                 return (
                   <li
@@ -121,7 +119,7 @@ const Home = (props: Props) => {
                         }
                       }}
                     >
-                      <div className="flex flex-wrap justify-between capitalize  bg-purple-400 p-4">
+                      <div className="flex flex-wrap justify-between capitalize  bg-purple-400 p-2 items-center">
                         <h3 className="sm:text-lg">{challenge.title}</h3>
                         <p className="text-gray-900 opacity-75 text-sm">
                           {new Intl.DateTimeFormat(
@@ -144,13 +142,10 @@ const Home = (props: Props) => {
               })}
             </ul>
           </div>
-          <BgImage className="hidden fixed right-2 max-w-lg right-6rem bottom-1rem w-1/2  md:block" />
+          <SvgUndrawDevFocus className="hidden w-1/2  md:block" />
         </div>
-        <div className="bottom-1rem right-2rem fixed">
-          <NavLink exact to="/add" className="opacity-75" activeClassName="opacity-0">
-            <SvgAdd className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
-          </NavLink>
-        </div>
+        <Gap className="pb-40" />
+        <FixedAddLink />
       </Fragment>
     );
   }
