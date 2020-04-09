@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 import SvgSkill from "../../icons/Skill";
-import SvgAdd from "../../icons/Add";
 import Gap from "../Gap/Gap";
 
 interface Props {}
@@ -32,11 +32,6 @@ const Navigation = (props: Props) => {
       >
         <SvgSkill className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
       </NavLink>
-      {/* <div className="">
-        <NavLink to="/add">
-          <SvgAdd className="w-8 h-8" />
-        </NavLink>
-      </div> */}
     </nav>
   );
 };
