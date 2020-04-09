@@ -8,19 +8,16 @@ import Skills from "./components/Skills/Skills";
 import Layout from "./layout/Layout";
 
 function App() {
-    return (
-        <Layout>
-            <Switch>
-                <Route path='/' exact component={Home} />
-                <Route path='/add' exact component={AddChallenge} />
-                <Route
-                    path='/detail/:challengeID'
-                    component={DetailChallenge}
-                />
-                <Route path='/skills' component={Skills} />
-            </Switch>
-        </Layout>
-    );
+  return (
+    <Layout>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/add" exact component={AddChallenge} />
+        <Route path="/detail/:challengeID" component={DetailChallenge} />
+        <Route path="/skills" component={Skills} />
+      </Switch>
+    </Layout>
+  );
 }
 
 export default App;
