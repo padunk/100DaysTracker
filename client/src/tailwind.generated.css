@@ -592,21 +592,6 @@ h6 {
   font-family: "Rosario", sans-serif;
 }
 
-button:hover {
-  --transform-translate-x: 0;
-  --transform-translate-y: 0;
-  --transform-rotate: 0;
-  --transform-skew-x: 0;
-  --transform-skew-y: 0;
-  --transform-scale-x: 1;
-  --transform-scale-y: 1;
-  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
-  --transform-translate-y: -1px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-  transition-duration: 300ms;
-}
-
 .container {
   width: 100%;
 }
@@ -633,6 +618,22 @@ button:hover {
   .container {
     max-width: 1280px;
   }
+}
+
+.btn:hover {
+  opacity: 0.75;
+  --transform-translate-x: 0;
+  --transform-translate-y: 0;
+  --transform-rotate: 0;
+  --transform-skew-x: 0;
+  --transform-skew-y: 0;
+  --transform-scale-x: 1;
+  --transform-scale-y: 1;
+  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  --transform-translate-y: -1px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: 300ms;
 }
 
 .hover-nav:hover {
@@ -1847,10 +1848,6 @@ button:hover {
   background-position: bottom;
 }
 
-.bg-bottom-4 {
-  background-position: center bottom 1rem;
-}
-
 .bg-center {
   background-position: center;
 }
@@ -1917,26 +1914,6 @@ button:hover {
 
 .bg-contain {
   background-size: contain;
-}
-
-.bg-1\/4 {
-  background-size: 25%;
-}
-
-.bg-1\/3 {
-  background-size: 33%;
-}
-
-.bg-1\/2 {
-  background-size: 50%;
-}
-
-.bg-2\/3 {
-  background-size: 67%;
-}
-
-.bg-3\/4 {
-  background-size: 75%;
 }
 
 .border-collapse {
@@ -3331,12 +3308,24 @@ button:hover {
   border-width: 2px;
 }
 
+.border-3 {
+  border-width: 3px;
+}
+
 .border-4 {
   border-width: 4px;
 }
 
+.border-6 {
+  border-width: 6px;
+}
+
 .border-8 {
   border-width: 8px;
+}
+
+.border-15 {
+  border-width: 15px;
 }
 
 .border {
@@ -3375,6 +3364,22 @@ button:hover {
   border-left-width: 2px;
 }
 
+.border-t-3 {
+  border-top-width: 3px;
+}
+
+.border-r-3 {
+  border-right-width: 3px;
+}
+
+.border-b-3 {
+  border-bottom-width: 3px;
+}
+
+.border-l-3 {
+  border-left-width: 3px;
+}
+
 .border-t-4 {
   border-top-width: 4px;
 }
@@ -3391,6 +3396,22 @@ button:hover {
   border-left-width: 4px;
 }
 
+.border-t-6 {
+  border-top-width: 6px;
+}
+
+.border-r-6 {
+  border-right-width: 6px;
+}
+
+.border-b-6 {
+  border-bottom-width: 6px;
+}
+
+.border-l-6 {
+  border-left-width: 6px;
+}
+
 .border-t-8 {
   border-top-width: 8px;
 }
@@ -3405,6 +3426,22 @@ button:hover {
 
 .border-l-8 {
   border-left-width: 8px;
+}
+
+.border-t-15 {
+  border-top-width: 15px;
+}
+
+.border-r-15 {
+  border-right-width: 15px;
+}
+
+.border-b-15 {
+  border-bottom-width: 15px;
+}
+
+.border-l-15 {
+  border-left-width: 15px;
 }
 
 .border-t {
@@ -11438,20 +11475,11 @@ button:hover {
   opacity: 1;
 }
 
-.b-top-pink-500 {
-  border-top-color: #ed64a6;
-}
-
-.b-r-white {
-  border-right-color: #fff;
-}
-
-.b-bottom-pink-500 {
-  border-bottom-color: #ed64a6;
-}
-
-.b-l-white {
-  border-left-color: #fff;
+.border-loading {
+  border-top-color: #1a202c;
+  border-right-color: #4a5568;
+  border-bottom-color: #4a5568;
+  border-left-color: #4a5568;
 }
 
 @media (min-width: 640px) {
@@ -12639,10 +12667,6 @@ button:hover {
     background-position: bottom;
   }
 
-  .sm\:bg-bottom-4 {
-    background-position: center bottom 1rem;
-  }
-
   .sm\:bg-center {
     background-position: center;
   }
@@ -12709,26 +12733,6 @@ button:hover {
 
   .sm\:bg-contain {
     background-size: contain;
-  }
-
-  .sm\:bg-1\/4 {
-    background-size: 25%;
-  }
-
-  .sm\:bg-1\/3 {
-    background-size: 33%;
-  }
-
-  .sm\:bg-1\/2 {
-    background-size: 50%;
-  }
-
-  .sm\:bg-2\/3 {
-    background-size: 67%;
-  }
-
-  .sm\:bg-3\/4 {
-    background-size: 75%;
   }
 
   .sm\:border-collapse {
@@ -14123,12 +14127,24 @@ button:hover {
     border-width: 2px;
   }
 
+  .sm\:border-3 {
+    border-width: 3px;
+  }
+
   .sm\:border-4 {
     border-width: 4px;
   }
 
+  .sm\:border-6 {
+    border-width: 6px;
+  }
+
   .sm\:border-8 {
     border-width: 8px;
+  }
+
+  .sm\:border-15 {
+    border-width: 15px;
   }
 
   .sm\:border {
@@ -14167,6 +14183,22 @@ button:hover {
     border-left-width: 2px;
   }
 
+  .sm\:border-t-3 {
+    border-top-width: 3px;
+  }
+
+  .sm\:border-r-3 {
+    border-right-width: 3px;
+  }
+
+  .sm\:border-b-3 {
+    border-bottom-width: 3px;
+  }
+
+  .sm\:border-l-3 {
+    border-left-width: 3px;
+  }
+
   .sm\:border-t-4 {
     border-top-width: 4px;
   }
@@ -14183,6 +14215,22 @@ button:hover {
     border-left-width: 4px;
   }
 
+  .sm\:border-t-6 {
+    border-top-width: 6px;
+  }
+
+  .sm\:border-r-6 {
+    border-right-width: 6px;
+  }
+
+  .sm\:border-b-6 {
+    border-bottom-width: 6px;
+  }
+
+  .sm\:border-l-6 {
+    border-left-width: 6px;
+  }
+
   .sm\:border-t-8 {
     border-top-width: 8px;
   }
@@ -14197,6 +14245,22 @@ button:hover {
 
   .sm\:border-l-8 {
     border-left-width: 8px;
+  }
+
+  .sm\:border-t-15 {
+    border-top-width: 15px;
+  }
+
+  .sm\:border-r-15 {
+    border-right-width: 15px;
+  }
+
+  .sm\:border-b-15 {
+    border-bottom-width: 15px;
+  }
+
+  .sm\:border-l-15 {
+    border-left-width: 15px;
   }
 
   .sm\:border-t {
@@ -23400,10 +23464,6 @@ button:hover {
     background-position: bottom;
   }
 
-  .md\:bg-bottom-4 {
-    background-position: center bottom 1rem;
-  }
-
   .md\:bg-center {
     background-position: center;
   }
@@ -23470,26 +23530,6 @@ button:hover {
 
   .md\:bg-contain {
     background-size: contain;
-  }
-
-  .md\:bg-1\/4 {
-    background-size: 25%;
-  }
-
-  .md\:bg-1\/3 {
-    background-size: 33%;
-  }
-
-  .md\:bg-1\/2 {
-    background-size: 50%;
-  }
-
-  .md\:bg-2\/3 {
-    background-size: 67%;
-  }
-
-  .md\:bg-3\/4 {
-    background-size: 75%;
   }
 
   .md\:border-collapse {
@@ -24884,12 +24924,24 @@ button:hover {
     border-width: 2px;
   }
 
+  .md\:border-3 {
+    border-width: 3px;
+  }
+
   .md\:border-4 {
     border-width: 4px;
   }
 
+  .md\:border-6 {
+    border-width: 6px;
+  }
+
   .md\:border-8 {
     border-width: 8px;
+  }
+
+  .md\:border-15 {
+    border-width: 15px;
   }
 
   .md\:border {
@@ -24928,6 +24980,22 @@ button:hover {
     border-left-width: 2px;
   }
 
+  .md\:border-t-3 {
+    border-top-width: 3px;
+  }
+
+  .md\:border-r-3 {
+    border-right-width: 3px;
+  }
+
+  .md\:border-b-3 {
+    border-bottom-width: 3px;
+  }
+
+  .md\:border-l-3 {
+    border-left-width: 3px;
+  }
+
   .md\:border-t-4 {
     border-top-width: 4px;
   }
@@ -24944,6 +25012,22 @@ button:hover {
     border-left-width: 4px;
   }
 
+  .md\:border-t-6 {
+    border-top-width: 6px;
+  }
+
+  .md\:border-r-6 {
+    border-right-width: 6px;
+  }
+
+  .md\:border-b-6 {
+    border-bottom-width: 6px;
+  }
+
+  .md\:border-l-6 {
+    border-left-width: 6px;
+  }
+
   .md\:border-t-8 {
     border-top-width: 8px;
   }
@@ -24958,6 +25042,22 @@ button:hover {
 
   .md\:border-l-8 {
     border-left-width: 8px;
+  }
+
+  .md\:border-t-15 {
+    border-top-width: 15px;
+  }
+
+  .md\:border-r-15 {
+    border-right-width: 15px;
+  }
+
+  .md\:border-b-15 {
+    border-bottom-width: 15px;
+  }
+
+  .md\:border-l-15 {
+    border-left-width: 15px;
   }
 
   .md\:border-t {
@@ -34161,10 +34261,6 @@ button:hover {
     background-position: bottom;
   }
 
-  .lg\:bg-bottom-4 {
-    background-position: center bottom 1rem;
-  }
-
   .lg\:bg-center {
     background-position: center;
   }
@@ -34231,26 +34327,6 @@ button:hover {
 
   .lg\:bg-contain {
     background-size: contain;
-  }
-
-  .lg\:bg-1\/4 {
-    background-size: 25%;
-  }
-
-  .lg\:bg-1\/3 {
-    background-size: 33%;
-  }
-
-  .lg\:bg-1\/2 {
-    background-size: 50%;
-  }
-
-  .lg\:bg-2\/3 {
-    background-size: 67%;
-  }
-
-  .lg\:bg-3\/4 {
-    background-size: 75%;
   }
 
   .lg\:border-collapse {
@@ -35645,12 +35721,24 @@ button:hover {
     border-width: 2px;
   }
 
+  .lg\:border-3 {
+    border-width: 3px;
+  }
+
   .lg\:border-4 {
     border-width: 4px;
   }
 
+  .lg\:border-6 {
+    border-width: 6px;
+  }
+
   .lg\:border-8 {
     border-width: 8px;
+  }
+
+  .lg\:border-15 {
+    border-width: 15px;
   }
 
   .lg\:border {
@@ -35689,6 +35777,22 @@ button:hover {
     border-left-width: 2px;
   }
 
+  .lg\:border-t-3 {
+    border-top-width: 3px;
+  }
+
+  .lg\:border-r-3 {
+    border-right-width: 3px;
+  }
+
+  .lg\:border-b-3 {
+    border-bottom-width: 3px;
+  }
+
+  .lg\:border-l-3 {
+    border-left-width: 3px;
+  }
+
   .lg\:border-t-4 {
     border-top-width: 4px;
   }
@@ -35705,6 +35809,22 @@ button:hover {
     border-left-width: 4px;
   }
 
+  .lg\:border-t-6 {
+    border-top-width: 6px;
+  }
+
+  .lg\:border-r-6 {
+    border-right-width: 6px;
+  }
+
+  .lg\:border-b-6 {
+    border-bottom-width: 6px;
+  }
+
+  .lg\:border-l-6 {
+    border-left-width: 6px;
+  }
+
   .lg\:border-t-8 {
     border-top-width: 8px;
   }
@@ -35719,6 +35839,22 @@ button:hover {
 
   .lg\:border-l-8 {
     border-left-width: 8px;
+  }
+
+  .lg\:border-t-15 {
+    border-top-width: 15px;
+  }
+
+  .lg\:border-r-15 {
+    border-right-width: 15px;
+  }
+
+  .lg\:border-b-15 {
+    border-bottom-width: 15px;
+  }
+
+  .lg\:border-l-15 {
+    border-left-width: 15px;
   }
 
   .lg\:border-t {
@@ -44922,10 +45058,6 @@ button:hover {
     background-position: bottom;
   }
 
-  .xl\:bg-bottom-4 {
-    background-position: center bottom 1rem;
-  }
-
   .xl\:bg-center {
     background-position: center;
   }
@@ -44992,26 +45124,6 @@ button:hover {
 
   .xl\:bg-contain {
     background-size: contain;
-  }
-
-  .xl\:bg-1\/4 {
-    background-size: 25%;
-  }
-
-  .xl\:bg-1\/3 {
-    background-size: 33%;
-  }
-
-  .xl\:bg-1\/2 {
-    background-size: 50%;
-  }
-
-  .xl\:bg-2\/3 {
-    background-size: 67%;
-  }
-
-  .xl\:bg-3\/4 {
-    background-size: 75%;
   }
 
   .xl\:border-collapse {
@@ -46406,12 +46518,24 @@ button:hover {
     border-width: 2px;
   }
 
+  .xl\:border-3 {
+    border-width: 3px;
+  }
+
   .xl\:border-4 {
     border-width: 4px;
   }
 
+  .xl\:border-6 {
+    border-width: 6px;
+  }
+
   .xl\:border-8 {
     border-width: 8px;
+  }
+
+  .xl\:border-15 {
+    border-width: 15px;
   }
 
   .xl\:border {
@@ -46450,6 +46574,22 @@ button:hover {
     border-left-width: 2px;
   }
 
+  .xl\:border-t-3 {
+    border-top-width: 3px;
+  }
+
+  .xl\:border-r-3 {
+    border-right-width: 3px;
+  }
+
+  .xl\:border-b-3 {
+    border-bottom-width: 3px;
+  }
+
+  .xl\:border-l-3 {
+    border-left-width: 3px;
+  }
+
   .xl\:border-t-4 {
     border-top-width: 4px;
   }
@@ -46466,6 +46606,22 @@ button:hover {
     border-left-width: 4px;
   }
 
+  .xl\:border-t-6 {
+    border-top-width: 6px;
+  }
+
+  .xl\:border-r-6 {
+    border-right-width: 6px;
+  }
+
+  .xl\:border-b-6 {
+    border-bottom-width: 6px;
+  }
+
+  .xl\:border-l-6 {
+    border-left-width: 6px;
+  }
+
   .xl\:border-t-8 {
     border-top-width: 8px;
   }
@@ -46480,6 +46636,22 @@ button:hover {
 
   .xl\:border-l-8 {
     border-left-width: 8px;
+  }
+
+  .xl\:border-t-15 {
+    border-top-width: 15px;
+  }
+
+  .xl\:border-r-15 {
+    border-right-width: 15px;
+  }
+
+  .xl\:border-b-15 {
+    border-bottom-width: 15px;
+  }
+
+  .xl\:border-l-15 {
+    border-left-width: 15px;
   }
 
   .xl\:border-t {

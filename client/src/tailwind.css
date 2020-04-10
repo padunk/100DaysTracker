@@ -14,12 +14,12 @@ h6 {
   font-family: "Rosario", sans-serif;
 }
 
-button:hover {
-  @apply transform -translate-y-px shadow-md transition duration-300;
-}
 
 @tailwind components;
 
+.btn:hover {
+  @apply .opacity-75  transform -translate-y-px shadow-md transition duration-300;
+}
 .hover-nav:hover {
   @apply transform opacity-100 -translate-y-1 scale-110 transition duration-300 ease-in-out;
 }
@@ -29,6 +29,7 @@ button:hover {
 .card:hover {
   @apply shadow-lg transition duration-300;
 }
+
 
 @tailwind utilities;
 
@@ -44,15 +45,9 @@ button:hover {
 .active-opacity {
   opacity: 1;
 }
-.b-top-pink-500 {
-  border-top-color: #ed64a6;
-}
-.b-r-white {
-  border-right-color: #fff;
-}
-.b-bottom-pink-500 {
-  border-bottom-color: #ed64a6;
-}
-.b-l-white {
-  border-left-color: #fff;
+.border-loading {
+  border-top-color: #1a202c;
+  border-right-color: #4a5568;
+  border-bottom-color: #4a5568;
+  border-left-color: #4a5568;
 }
