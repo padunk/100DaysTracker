@@ -78,6 +78,9 @@ const Home = (props: Props) => {
       const response = await fetch(`${url}/detail/${id}`).then(res =>
         res.json()
       );
+      if (response[0] === null) {
+        response.shift();
+      }
       return response.length;
     } catch (error) {
       console.log(error);
@@ -98,8 +101,8 @@ const Home = (props: Props) => {
       <Fragment>
         <Gap className="h-5" />
         <SubTitle subtitle="My Journey to Awesomeness!" emoji="⭐️" />
-        <div className="flex justify-around items-center">
-          <div className="md:pt-8">
+        <div className="flex justify-around items-center md:pt-8">
+          <div>
             <SvgUndrawDevFocus className="w-3/4 h-48 mx-auto md:hidden" />
             <Gap className="h-2" />
             <ul className="px-2 max-w-md mx-auto sm:px-6">
@@ -142,9 +145,10 @@ const Home = (props: Props) => {
               })}
             </ul>
           </div>
-          <SvgUndrawDevFocus className="hidden w-5/12  md:block" />
+          <Wrapper customClass="relative w-1/2 top-0 right-0 h-screen">
+            <SvgUndrawDevFocus className="hidden w-3/4 absolute top-0  md:block" />
+          </Wrapper>
         </div>
-        <Gap className="pb-40" />
         <FixedAddLink />
       </Fragment>
     );
