@@ -101,8 +101,8 @@ const Home = (props: Props) => {
       <Fragment>
         <Gap className="h-5" />
         <SubTitle subtitle="My Journey to Awesomeness!" emoji="⭐️" />
-        <div className="flex justify-around items-center md:pt-8">
-          <div>
+        <Wrapper customClass="flex justify-around items-center md:pt-8">
+          <Wrapper customClass='w-1/2'>
             <SvgUndrawDevFocus className="w-3/4 h-48 mx-auto md:hidden" />
             <Gap className="h-2" />
             <ul className="px-2 max-w-md mx-auto sm:px-6">
@@ -122,7 +122,7 @@ const Home = (props: Props) => {
                         }
                       }}
                     >
-                      <div className="flex flex-wrap justify-between capitalize  bg-purple-400 p-2 items-center">
+                      <Wrapper customClass="flex flex-wrap justify-between capitalize  bg-purple-400 p-2 items-center">
                         <h3 className="sm:text-lg">{challenge.title}</h3>
                         <p className="text-gray-900 opacity-75 text-sm">
                           {new Intl.DateTimeFormat(
@@ -130,7 +130,7 @@ const Home = (props: Props) => {
                             dateOptions
                           ).format(challenge.date_created)}
                         </p>
-                      </div>
+                      </Wrapper>
                       <p className="capitalize text-gray-900 opacity-75 px-4 pt-2">
                         {challenge.goal}
                       </p>
@@ -144,11 +144,11 @@ const Home = (props: Props) => {
                 );
               })}
             </ul>
-          </div>
-          <Wrapper customClass="relative w-1/2 top-0 right-0 h-screen">
-            <SvgUndrawDevFocus className="hidden w-3/4 absolute top-0  md:block" />
           </Wrapper>
-        </div>
+          <Wrapper customClass="hidden md:block relative w-1/2 top-0 right-0 h-screen self-start">
+            <SvgUndrawDevFocus className="hidden w-3/4 absolute top-0 md:block" />
+          </Wrapper>
+        </Wrapper>
         <FixedAddLink />
       </Fragment>
     );
