@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Gap from "../Gap/Gap";
 import Wrapper from "../Wrapper/Wrapper";
 import InputLabel from "../InputLabel/InputLabel";
@@ -6,8 +6,13 @@ import InputText from "../InputText/InputText";
 import { BASE_URL } from "../../base/baseURL";
 import Button from "../Button/Button";
 import SubTitle from "../SubTitle/SubTitle";
+import ServerStatusText from "../ServerStatusText/ServerStatusText";
 
-interface Props {}
+interface Props {
+  history: {
+    push: Function;
+  };
+}
 
 const AddChallenge = (props: Props) => {
   const inputWrapperClass = "grid grid-cols-1 col-gap-4 px-4 sm:grid-cols-form";
@@ -15,35 +20,52 @@ const AddChallenge = (props: Props) => {
   const [title, setTitle] = useState<string | undefined>("");
   const [hashtag, setHashtag] = useState<string | undefined>("");
   const [goal, setGoal] = useState<string | undefined>("");
+  const [message, setMessage] = useState<string>("");
+  const [status, setStatus] = useState("");
+  let redirectHomeTimeoutId: NodeJS.Timeout;
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    try {
-      await fetch(`${BASE_URL}/add`, {
-        method: "POST",
-        mode: "cors",
-        credentials: "same-origin",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ title, hashtag, goal })
+
+    await fetch(`${BASE_URL}/add`, {
+      method: "POST",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ title, hashtag, goal })
+    })
+      .then(response => {
+        console.log(response);
+        if (!response.ok) {
+          setStatus("" + response.status);
+          throw new Error(
+            `HTTP error, status = ${response.status}: ${response.statusText}`
+          );
+        }
+        return response;
       })
-        .then(() => {
-          setTitle("");
-          setHashtag("");
-          setGoal("");
-        })
-        .catch(err => {
-          if (err) {
-            throw new Error(err.message);
-          }
-        });
-    } catch (error) {
-      console.error(error);
-    }
+      .then((data: any) => {
+        setMessage("Succesfully adding data to the server.");
+        setStatus("" + data.status);
+        setTitle("");
+        setHashtag("");
+        setGoal("");
+
+        redirectHomeTimeoutId = setTimeout(() => props.history.push("/"), 1500);
+      })
+      .catch(error => {
+        setMessage(error.message);
+      });
   };
+
+  useEffect(() => {
+    return () => clearTimeout(redirectHomeTimeoutId);
+  });
+
   return (
-    <Wrapper customClass='px-2'>
+    <Wrapper customClass="px-2">
       <Gap className="h-8" />
       <SubTitle subtitle="Add new challenge" emoji="🔥" />
       <Gap className="h-5" />
@@ -71,7 +93,7 @@ const AddChallenge = (props: Props) => {
             name="hashtag"
             req={true}
             val={hashtag}
-            placeholder="#100DaysOfCode"
+            placeholder="100DaysOfCode"
             handleChange={(event: React.FormEvent<HTMLInputElement>): void =>
               setHashtag(event.currentTarget.value)
             }
@@ -97,6 +119,7 @@ const AddChallenge = (props: Props) => {
           </Button>
         </Wrapper>
       </form>
+      <ServerStatusText message={message} status={status} />
     </Wrapper>
   );
 };
