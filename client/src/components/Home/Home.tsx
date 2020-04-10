@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 import { BASE_URL } from "../../base/baseURL";
@@ -9,7 +9,6 @@ import SubTitle from "../SubTitle/SubTitle";
 import Loading from "../../Loading/Loading";
 import Wrapper from "../Wrapper/Wrapper";
 import SvgUndrawDevFocus from "../../icons/SvgUndrawDevFocus";
-import SvgAdd from "../../icons/Add";
 import FixedAddLink from "../FixedAddLink/FixedAddLink";
 
 interface Props {}
@@ -61,13 +60,14 @@ const Home = (props: Props) => {
 
   // GSAP ANIMATION
   let cardElement: any = useRef([]);
+
   useEffect(() => {
     gsap.from(cardElement.current, {
-      delay: 0.2,
-      duration: 1.5,
-      y: 64,
       opacity: 0,
       autoAlpha: 0,
+      delay: 0.2,
+      duration: 1.5,
+      yPercent: 67,
       stagger: 0.2,
       ease: "back"
     });
@@ -142,7 +142,7 @@ const Home = (props: Props) => {
               })}
             </ul>
           </div>
-          <SvgUndrawDevFocus className="hidden w-1/2  md:block" />
+          <SvgUndrawDevFocus className="hidden w-5/12  md:block" />
         </div>
         <Gap className="pb-40" />
         <FixedAddLink />
