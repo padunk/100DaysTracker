@@ -7,6 +7,7 @@ import SvgDelete from "../../icons/Delete";
 import Gap from "../Gap/Gap";
 import SvgUpdateArrow from "../../icons/UpdateArrow";
 import SvgCheckmark from "../../icons/Checkmark";
+import IconButton from "../Button/IconButton";
 
 interface ISkills {
   skill_id: string;
@@ -41,45 +42,55 @@ function SkillDetail({ title, skills, id, handleClick }: Props): ReactElement {
               <span className="text-lg">{skill.skill_name}</span>
               <div className="flex flex-wrap">
                 {id === 1 && (
-                  <SvgShuttle
-                    id={skill.skill_id}
-                    fill="#3182ce"
-                    className="w-4 h-4 cursor-pointer hover-nav"
-                    onClick={handleClick}
-                  />
+                  <IconButton type="button">
+                    <SvgShuttle
+                      id={skill.skill_id}
+                      fill="#3182ce"
+                      className='w-4 h-4'
+                      onClick={handleClick}
+                    />
+                  </IconButton>
                 )}
                 {id === 2 && (
                   <>
-                    <SvgCheckmark
-                      id={skill.skill_id}
-                      fill="#48bb78"
-                      className="w-4 h-4 cursor-pointer hover-nav"
-                      onClick={handleClick}
-                    />
+                    <IconButton type="button">
+                      <SvgCheckmark
+                        id={skill.skill_id}
+                        fill="#48bb78"
+                        className='w-4 h-4'
+                        onClick={handleClick}
+                      />
+                    </IconButton>
                     <Gap className="w-4" />
-                    <SvgUpdateArrow
-                      id={skill.skill_id}
-                      fill="#9f7aea"
-                      className="w-4 h-4 cursor-pointer hover-nav"
-                      onClick={handleClick}
-                    />
+                    <IconButton type="button">
+                      <SvgUpdateArrow
+                        id={skill.skill_id}
+                        fill="#9f7aea"
+                        className='w-4 h-4'
+                        onClick={handleClick}
+                      />
+                    </IconButton>
                   </>
                 )}
                 {id === 3 && (
-                  <SvgUpdateArrow
-                    id={skill.skill_id}
-                    fill="#9f7aea"
-                    className="w-4 h-4 cursor-pointer hover-nav"
-                    onClick={handleClick}
-                  />
+                  <IconButton type="button">
+                    <SvgUpdateArrow
+                      id={skill.skill_id}
+                      fill="#9f7aea"
+                      className='w-4 h-4'
+                      onClick={handleClick}
+                    />
+                  </IconButton>
                 )}
                 <Gap className="w-4" />
-                <SvgDelete
-                  id={skill.skill_id}
-                  fill="#e53e3e"
-                  className="w-4 h-4 cursor-pointer hover-nav"
-                  onClick={handleClick}
-                />
+                <IconButton type="button">
+                  <SvgDelete
+                    id={skill.skill_id}
+                    fill="#e53e3e"
+                    className='w-4 h-4'
+                    onClick={handleClick}
+                  />
+                </IconButton>
               </div>
             </li>
           );
