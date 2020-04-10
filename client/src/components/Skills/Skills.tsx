@@ -202,7 +202,6 @@ const Skills = (props: Props) => {
           skills={allSkills.filter(skill => skill.complete_skill === 1)}
         />
       </Wrapper>
-      <Gap className="pb-40" />
     </Fragment>
   );
 };

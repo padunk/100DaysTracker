@@ -116,7 +116,6 @@ const DetailChallenge = (props: Props) => {
               );
             })}
           </ol>
-          <Gap className="h-8" />
         </div>
       </Fragment>
     );
