@@ -7,7 +7,7 @@ interface Props {
     customClass?: string;
 }
 
-const defaultClass = "px-3 py-1 font-bold rounded-md";
+const defaultClass = "px-3 py-1 font-bold rounded-md btn";
 
 const Button = (props: Props & React.HTMLProps<HTMLButtonElement>) => {
     const btnClass = classNames(defaultClass, props.customClass);
