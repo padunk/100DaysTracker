@@ -12,14 +12,23 @@ function Footer({}: Props): ReactElement {
   const year = d.getFullYear();
 
   return (
-    <footer className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+    <footer className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
       <Wrapper customClass="text-center">
         <h4>
-          Made with 💜 by{" "}
+          Made with{" "}
+          <span role="img" aria-label="purple heart">
+            💜
+          </span>{" "}
+          by{" "}
           <a href="http://linkedin.com/in/abrahamanakagung">
             Abraham Anak Agung
           </a>{" "}
-          <span className="text-gray-600 block sm:inline">©️{year}</span>
+          <span className="text-gray-600 block sm:inline">
+            <span role="img" aria-label="copyright">
+              <sup>©️</sup>
+            </span>
+            {year}
+          </span>
         </h4>
       </Wrapper>
       <Gap className="h-4" />
