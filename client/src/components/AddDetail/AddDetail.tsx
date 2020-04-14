@@ -56,7 +56,7 @@ const AddDetail = (props: Props) => {
     if (event.currentTarget instanceof HTMLFormElement) {
       event.preventDefault();
     }
-    saveDetail(BASE_URL);
+    saveDetail(BASE_URL!);
   };
 
   let textAreaElement = useRef<HTMLTextAreaElement>(null);

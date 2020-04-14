@@ -42,7 +42,7 @@ const Home = (props: Props) => {
           });
 
         progress.current = await Promise.all(
-          response.map(r => getChallengeDetail(BASE_URL, r.challenge_id))
+          response.map(r => getChallengeDetail(BASE_URL!, r.challenge_id))
         ).catch(err => {
           if (err) {
             throw new Error(err.message);
@@ -55,7 +55,7 @@ const Home = (props: Props) => {
       }
     }
 
-    getAllChallenges(BASE_URL);
+    getAllChallenges(BASE_URL!);
   }, []);
 
   // GSAP ANIMATION

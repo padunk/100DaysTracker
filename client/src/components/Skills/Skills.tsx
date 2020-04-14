@@ -42,7 +42,7 @@ const Skills = (props: Props) => {
   }
 
   useEffect(() => {
-    getAllSkills(BASE_URL);
+    getAllSkills(BASE_URL!);
   }, []);
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>): void =>
@@ -75,7 +75,7 @@ const Skills = (props: Props) => {
           setStatus("" + data.status);
           refreshContent.current = setTimeout(() => {
             setMessage("");
-            getAllSkills(BASE_URL);
+            getAllSkills(BASE_URL!);
           }, 3000);
         })
         .catch(error => {
@@ -83,7 +83,7 @@ const Skills = (props: Props) => {
         });
     }
 
-    postNewSkill(BASE_URL, { newSkill });
+    postNewSkill(BASE_URL!, { newSkill });
   };
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const Skills = (props: Props) => {
           );
         }
       })
-      .then(() => getAllSkills(BASE_URL))
+      .then(() => getAllSkills(BASE_URL!))
       .catch(error => {
         setMessage(error.message);
       });
@@ -121,7 +121,7 @@ const Skills = (props: Props) => {
     updateSkill.id = id;
 
     if (method === "Delete") {
-      deleteSkill(BASE_URL, updateSkill.id);
+      deleteSkill(BASE_URL!, updateSkill.id);
       return;
     }
 
@@ -155,7 +155,7 @@ const Skills = (props: Props) => {
           );
         }
       })
-      .then(() => getAllSkills(BASE_URL))
+      .then(() => getAllSkills(BASE_URL!))
       .catch(error => {
         setMessage(error.message);
       });
@@ -163,7 +163,7 @@ const Skills = (props: Props) => {
 
   const handleClick = (e: any) => {
     const { id, textContent: method } = e.currentTarget;
-    updateSkillProgress(BASE_URL, id, method);
+    updateSkillProgress(BASE_URL!, id, method);
   };
 
   return (
