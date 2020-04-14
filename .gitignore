@@ -116,3 +116,6 @@ dist
 
 # db
 *.db
+
+# rsa key
+*.key
