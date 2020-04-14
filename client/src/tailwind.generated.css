@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -663,6 +665,8 @@ h6 {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-duration: 300ms;
 }
+
+/* purgecss end ignore */
 
 .sr-only {
   position: absolute;
