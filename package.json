@@ -9,7 +9,7 @@
         "pre-build": "cd client && yarn install",
         "build": "cd client && yarn build",
         "heroku-postbuild": "yarn pre-build && yarn build",
-        "dev": "nodemon server.js && yarn client"
+        "dev": "nodemon server.js"
     },
     "engines": {
         "node": "12.16.0",
@@ -22,7 +22,7 @@
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
-        "pg": "^8.0.2",
+        "pg": "7",
         "uuid": "^7.0.3"
     },
     "devDependencies": {
