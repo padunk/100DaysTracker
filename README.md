@@ -3,25 +3,25 @@
 ## Installation
 You need to install [SQLite](https://www.sqlite.org/index.html) for database.
 <br>
-Then on each `server` and `client` directory:
+Then on each `root` and `client` directory:
 ```bash
 yarn install
 ```
 
+<br>
+
+At root directory:
 #### Create database:
 ```bash
-cd server/database
-node createDatabase
+yarn createdb
 ```
 
 #### Start the server (port 5000)
 ```bash
-cd server
-yarn start
+yarn dev
 ```
 
 #### Start the client (port 3000)
 ```bash
-cd client
-yarn start
+yarn client
 ```
