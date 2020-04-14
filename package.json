@@ -8,12 +8,13 @@
         "client": "cd client && yarn start",
         "pre-build": "cd client && yarn install",
         "build": "cd client && yarn build",
-        "heroku-postbuild": "yarn prebuild && yarn build",
+        "heroku-postbuild": "yarn pre-build && yarn build",
         "dev": "nodemon server.js && yarn client"
     },
     "engines": {
-        "node": ">=12",
-        "npm": ">=6"
+        "node": "12.16.0",
+        "npm": "6.13.7",
+        "yarn": "1.22.0"
     },
     "license": "MIT",
     "dependencies": {
