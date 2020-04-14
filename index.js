@@ -9,10 +9,7 @@ const { handleError, handleSuccess } = require("./utilities/handleResponse");
 
 const APP = express();
 
-const port =
-  process.env.NODE_ENV === "production"
-    ? process.env.DATABASE_URL
-    : process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 APP.use(express.json());
 APP.use(bodyParser.urlencoded({ extended: false }));
@@ -30,6 +27,10 @@ client.connect(err => {
     console.log("Connected to the database");
   }
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 APP.get("/", (req, res, next) => {
   client.query("SELECT * FROM challenge", function(err, { rows }) {
