@@ -1,4 +1,4 @@
-require("dotenv").config;
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
@@ -18,7 +18,7 @@ APP.use(cors());
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
-  ssl: true
+  ssl: process.env.NODE_ENV === "production" ? true : false
 });
 
 client.connect(err => {
@@ -38,8 +38,9 @@ APP.get("/", (req, res, next) => {
     if (err) {
       throw err;
     }
-    console.log('/', rows)
-    res.end(JSON.stringify(rows[0]));
+    console.log(rows);
+    res.status(205).send(JSON.stringify(rows));
+    res.end();
   });
 });
 
@@ -56,7 +57,6 @@ APP.get("/detail/:challengeID", (req, res, next) => {
     if (err) {
       handleError(res, err);
     }
-    console.log('/detail/:id', rows)
     if (rows.length === 0) {
       res.end(JSON.stringify([null]));
     }
@@ -107,7 +107,6 @@ APP.get("/skills", (req, res, next) => {
       handleError(res, err);
       return;
     }
-    console.log('/skills', rows)
     res.end(JSON.stringify(rows[0]));
   });
 });
