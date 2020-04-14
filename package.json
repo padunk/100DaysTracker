@@ -6,10 +6,11 @@
     "scripts": {
         "start": "node index.js",
         "client": "cd client && yarn start",
-        "pre-build": "cd client && yarn install",
+        "prebuild": "cd client && yarn install",
         "build": "cd client && yarn build",
-        "heroku-postbuild": "yarn pre-build && yarn build",
-        "dev": "nodemon server.js"
+        "heroku-postbuild": "yarn prebuild && yarn build",
+        "dev": "nodemon server.js",
+        "createdb": "cd database && node createDatabase.js"
     },
     "engines": {
         "node": "12.16.0",
