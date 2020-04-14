@@ -1,4 +1,6 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
+import { Flipper, Flipped } from "react-flip-toolkit";
+
 import AddSkill from "../AddSkill/AddSkill";
 import Gap from "../Gap/Gap";
 import SubTitle from "../SubTitle/SubTitle";
@@ -9,20 +11,17 @@ import ServerStatusText from "../ServerStatusText/ServerStatusText";
 
 interface Props {}
 
-interface ISkills {
-  skill_id: string;
-  skill_name: string;
-  new_skill: number;
-  progress_skill: number;
-  complete_skill: number;
-  date_created: number;
-}
-
 const Skills = (props: Props) => {
   const [newSkill, setNewSkill] = useState<string | undefined>("");
-  const [allSkills, setAllSkills] = useState<Array<ISkills>>([]);
+  const [allSkills, setAllSkills] = useState([]);
   const [message, setMessage] = useState<string>("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<string>("");
+
+  const cardGroups = [
+    { name: "Wish Skills", data: "new_skill" },
+    { name: "In Progress", data: "progress_skill" },
+    { name: "Complete", data: "complete_skill" }
+  ];
   let refreshContent: any = useRef(null);
 
   async function getAllSkills(url: string) {
@@ -99,13 +98,12 @@ const Skills = (props: Props) => {
       mode: "cors",
       credentials: "same-origin",
       headers: {
-        Accept: "application/json, application/text",
+        Accept: "application/json, text/html",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ id })
     })
       .then(response => {
-        console.log(response);
         if (!response.ok) {
           throw new Error(
             `HTTP error, status = ${response.status}: ${response.statusText}`
@@ -123,7 +121,6 @@ const Skills = (props: Props) => {
     updateSkill.id = id;
 
     if (method === "Delete") {
-      console.log("delete");
       deleteSkill(BASE_URL, updateSkill.id);
       return;
     }
@@ -152,7 +149,6 @@ const Skills = (props: Props) => {
       body: JSON.stringify(updateSkill)
     })
       .then(response => {
-        console.log(response);
         if (!response.ok) {
           throw new Error(
             `HTTP error, status = ${response.status}: ${response.statusText}`
@@ -183,24 +179,29 @@ const Skills = (props: Props) => {
       <Gap className="h-2" />
       <ServerStatusText message={message} status={status} />
       <Wrapper customClass="md:flex max-w-3xl mx-auto">
-        <SkillCard
-          id={1}
-          handleClick={handleClick}
-          title="Wish Skills"
-          skills={allSkills.filter(skill => skill.new_skill === 1)}
-        />
-        <SkillCard
-          id={2}
-          handleClick={handleClick}
-          title="In Progress"
-          skills={allSkills.filter(skill => skill.progress_skill === 1)}
-        />
-        <SkillCard
-          id={3}
-          handleClick={handleClick}
-          title="Complete"
-          skills={allSkills.filter(skill => skill.complete_skill === 1)}
-        />
+        <Flipper
+          flipKey={allSkills
+            .map(skill => {
+              return Object.keys(skill)
+                .map(detail => detail)
+                .join("");
+            })
+            .join("")}
+          debug={true}
+        >
+          {allSkills.length > 0 &&
+            cardGroups.map((group, idx) => (
+              <Flipped flipId={group.name} key={group.name}>
+                <SkillCard
+                  key={group.name}
+                  id={idx + 1}
+                  handleClick={handleClick}
+                  title={group.name}
+                  skills={allSkills.filter(skill => skill[group.data] === 1)}
+                />
+              </Flipped>
+            ))}
+        </Flipper>
       </Wrapper>
     </Fragment>
   );
