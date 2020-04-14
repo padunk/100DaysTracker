@@ -38,7 +38,8 @@ APP.get("/", (req, res, next) => {
     if (err) {
       throw err;
     }
-    res.end(JSON.stringify(rows));
+    console.log('/', rows)
+    res.end(JSON.stringify(rows[0]));
   });
 });
 
@@ -48,18 +49,18 @@ APP.get("/detail/:challengeID", (req, res, next) => {
   const query = `
         SELECT * 
         FROM challenge_detail 
-        WHERE parent_id='${id}' 
-        ORDER BY rowid DESC
+        WHERE parent_id='${id}'
     `;
 
   client.query(query, function(err, { rows }) {
     if (err) {
       handleError(res, err);
     }
+    console.log('/detail/:id', rows)
     if (rows.length === 0) {
       res.end(JSON.stringify([null]));
     }
-    res.end(JSON.stringify(rows));
+    res.end(JSON.stringify(rows[0]));
   });
 });
 
@@ -106,8 +107,8 @@ APP.get("/skills", (req, res, next) => {
       handleError(res, err);
       return;
     }
-    // res.status(204);
-    res.end(JSON.stringify(rows));
+    console.log('/skills', rows)
+    res.end(JSON.stringify(rows[0]));
   });
 });
 
