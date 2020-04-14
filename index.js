@@ -1,5 +1,6 @@
 require("dotenv").config;
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const uuidv4 = require("uuid").v4;
@@ -29,7 +30,7 @@ client.connect(err => {
 });
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  APP.use(express.static(path.join(__dirname, "client/build")));
 }
 
 APP.get("/", (req, res, next) => {
