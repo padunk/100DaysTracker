@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 @tailwind base;
 
 body {
@@ -30,6 +31,7 @@ h6 {
   @apply shadow-lg transition duration-300;
 }
 
+/* purgecss end ignore */
 
 @tailwind utilities;
 
