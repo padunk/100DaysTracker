@@ -6,7 +6,7 @@ import Gap from "../Gap/Gap";
 import AddDetail from "../AddDetail/AddDetail";
 import { BASE_URL } from "../../base/baseURL";
 import SubTitle from "../SubTitle/SubTitle";
-import Loading from "../../Loading/Loading";
+import Loading from "../Loading/Loading";
 import bgImage from "../../icons/svg/undraw_programming.svg";
 
 interface Props {
