@@ -6,7 +6,7 @@ import { BASE_URL } from "../../base/baseURL";
 import Gap from "../Gap/Gap";
 import Metered from "../Metered/Metered";
 import SubTitle from "../SubTitle/SubTitle";
-import Loading from "../../Loading/Loading";
+import Loading from "../Loading/Loading";
 import Wrapper from "../Wrapper/Wrapper";
 import SvgUndrawDevFocus from "../../icons/SvgUndrawDevFocus";
 import FixedAddLink from "../FixedAddLink/FixedAddLink";
