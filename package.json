@@ -8,7 +8,6 @@
         "client": "cd client && yarn start",
         "prebuild": "cd client && yarn install",
         "build": "cd client && yarn build",
-        "heroku-postbuild": "yarn prebuild && yarn build",
         "dev": "nodemon server.js",
         "createdb": "cd database && node createDatabase.js"
     },
